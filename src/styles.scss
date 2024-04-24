@@ -1,1 +1,328 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+
+
+
+// Nombre marca
+.marca {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 35px;
+}
+
+// Oprimir boton
+.nav-link {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    border-radius: 15px;
+}
+.nav-item:hover .nav-link {
+    background-color: white;
+    color: black;
+    font-weight: 500;
+  }
+
+.gradient-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #4A4C66, #25D275);
+    z-index: -1; /* Para que esté detrás del contenido */
+}
+
+// Tipo de letra
+.tittle {
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: black;
+    border-radius: 5px;
+}
+
+.tittle2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 741;
+    font-style: normal;
+    border-radius: 5px;
+  }
+
+.subtittle {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: black;
+    font-size: 20px;
+}
+
+.text {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    font-size: 15px;
+}
+
+.text2 {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+    font-size: 15px;
+}
+
+.text3 {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: black;
+    font-size: 15px;
+}
+
+
+// Tarjetas
+.card-tittle { //Degradado
+    background-image: linear-gradient(to bottom right, rgba(90, 190, 73, 63%), rgba(34, 52, 88, 70%)); /* Degradado de azul a cian */
+    border: none;
+    padding: 15px;
+}
+
+.card-body { // Fondo blanco
+    background-color: white;
+    border: none;
+    padding: 20px;
+}
+
+body { // Fondo general
+    background-color: #e6e6e7;
+    padding-top: 0px; /* Ajusta este valor al de la altura de tu barra de perfil */ /*32*/
+    margin: 0;
+}
+
+.container-degrade-principal {
+    background-image: linear-gradient(to bottom right, rgba(90, 190, 73, 100%), rgba(34, 52, 88, 100%)); /* Degradado de azul a cian */
+    border: none;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+}
+
+.container-degrade {
+    background-image: linear-gradient(to bottom right, rgba(90, 190, 73, 63%), rgba(34, 52, 88, 70%)); 
+    border: none;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+}
+
+// Botones
+.btn-primary {
+    background-color: #25D275;
+    border: none;
+    padding: 7px;
+    transition: background-color 0.3s ease;
+    &:active {
+        background-color: #3E68BA;
+    }
+}
+
+.btn-info {
+    background-color: #071955;
+    color: white;
+    border: none;
+    padding: 7px;
+}
+
+.btn-info:hover {
+    background-color: #051535;
+    color: white;
+}  
+
+.btn-continue {
+    background-color: #3E68BA;
+    border: none;
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+.btn-continue:hover {
+    background-color: #475f91;
+    font-weight: 500;
+    color: white;
+    font-weight: 700;
+}
+
+.btn-primary-color {
+    background: linear-gradient(to right, #4A4C66, #25D275);
+    border: none;
+    color: white;
+    font-weight: 800;
+}
+
+.btn-primary-color:hover {
+    background: black;
+    font-weight: 800;
+    color: white;
+}
+
+.btn-simple {
+    background-color: black;
+    color: white;
+    font-weight: 500;
+}
+.btn-simple:hover {
+    background-color: black;
+    color: white;
+    font-weight: 500;
+}
+
+.col-md-2 .btn.btn-app {
+    background-color: black;
+    border: none;
+    color: white;
+}
+
+.btn-reservar {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.btn-reservar:hover {
+    background-color: #25D275;
+    font-weight: 500;
+}
+
+// Header profile //
+.header-rectangle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to right, rgba(90, 190, 73, 100%), rgba(34, 52, 88, 100%));
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    width: 100%;      /* Asegura que se extienda a lo largo de toda la ventana */
+    top: 0;           /* Alinea la barra en la parte superior de la ventana */
+    left: 0;          /* Alinea la barra en el borde izquierdo de la ventana */
+    z-index: 1000;  
+}
+
+.header-rectangle.scrolled {
+    background-image: linear-gradient(to right, rgba(142, 12, 75, 0.8), rgba(0, 25, 51, 80%)); /* Cambia a un fondo azul, por ejemplo */
+}
+
+
+.brand-info, .profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: flex-end; /* Alinea los elementos a la derecha */
+}
+
+.profile-name {
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    margin-bottom: -0.8rem; /* Ajusta el margen inferior */
+}
+
+.profile-role {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: -0.9rem; 
+}
+
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px; /* Ajusta el margen a la derecha de la imagen */
+    margin-left: 30px;
+}
+
+.brand-logo {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    margin-right: 10px;
+    margin-left: 20px; /* Ajusta el margen a la derecha del logo */
+}
+
+.icons-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; 
+    margin-left: auto; 
+}
+
+// Galeria
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-bottom: -0.9rem;
+}
+
+.separador {
+    width: 3px;
+    height: 100%;
+    color: black;
+}
+
+// reservas
+.reserva-item {
+    background-color: #E6E7EA;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px; 
+}
+
+.color-container {
+    background-color: #E6E7EA;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 60%;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center;
+}
+
+/* POpover */
+.popover-custom .popover-header {
+    background-color: #00ffaa;
+    text-align: center;
+}
+
+.popover-custom .popover-body {
+    background-image: rgb(235, 246, 250);
+}
+
+.login-image {
+    width: 100%;
+    max-width: 600px;  
+    height: 100%;      
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+  

@@ -1,0 +1,15 @@
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+.nav-link {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: black;
+    border-radius: 15px;
+}
+.nav-item:hover .nav-link {
+    background-color: black;
+    color: white;
+    font-weight: 500;
+  }

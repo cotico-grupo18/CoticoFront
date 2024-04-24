@@ -1,0 +1,53 @@
+<body>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8">
+                <div class="card" style="border:none;">
+                    <div class="card-tittle" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                        <h3 class="tittle text-center">Registrar Hotel</h3>
+                    </div>
+                    <div class="card-body" style="border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+                        <p class="subtittle text-center">Datos laborales del gerente o administrativo</p>
+                        <hr style="border: none; height: 3px; background-image: linear-gradient(to right, rgba(90, 190, 73, 1), rgba(34, 52, 88, 1)); margin-top: 4px; width: 600px; margin: 0 auto;">
+                        <form style="margin-left: 50px; margin-right: 50px; margin-top: 20px">
+                            <div class="form-group">
+                                <label for="cargo" class="text">Cargo:</label>
+                                <input type="text" class="form-control" id="cargo" name="cargo" style="width: 440px;" placeholder="Nombre del cargo">
+                            </div> 
+                            <!--JORNADA LABORAL--> 
+                            
+                            <label for="jornada" class="text">Jornada Laboral:</label>
+                            <div class="row align-items-center mt-2" *ngFor="let jornada of jornadas; let i = index">
+                                <div class="col">
+                                    <select class="form-select" id="dias" name="dias" [(ngModel)]="jornadas[i].dia">
+                                        <option value="Seleccionar" disabled selected>Seleccionar día</option>
+                                        <option *ngFor="let dia of diasSemana" [value]="dia">{{ dia }}</option>
+                                    </select>
+                                </div>
+                                <div class="col" style="max-width: 150px;">
+                                    <input type="time" class="form-control" [(ngModel)]="jornadas[i].horaInicio" placeholder="Hora de inicio">
+                                </div>
+                                <div class="col" style="max-width: 150px;">
+                                    <input type="time" class="form-control" [(ngModel)]="jornadas[i].horaFin" placeholder="Hora de fin">
+                                </div>
+                                <div class="col-auto"> 
+                                    <i class="bi bi-trash text-danger" (click)="eliminarJornada(i)" style="cursor: pointer; cursor: pointer; font-size: 1.5rem;"></i>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-simple mt-3 px-3" (click)="agregarJornada()">Añadir Jornada</button>
+                            <!--Botones-->
+                            <div class="row mt-5 justify-content-center align-items-center">
+                                <div class="col text-center">
+                                    <button class="btn btn-secondary px-5 py-1">Regresar</button>
+                                </div>
+                                <div class="col text-center">
+                                    <button class="btn btn-primary px-5 py-1" routerLink="/signin" >Finalizar Registro</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

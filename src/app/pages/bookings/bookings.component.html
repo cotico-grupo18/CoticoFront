@@ -1,0 +1,206 @@
+<head>
+    <!-- Incluir CSS de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+</head>
+<body>
+    <!--Perfil-->
+    <div class="header-rectangle">
+        <div class="brand-info">
+            <img src="assets/img/Logo_CoticoStay_Blanco.png" alt="Logo de la Marca" class="brand-logo">
+            <span class="marca">CoticoStay</span>
+        </div>
+        <div class="icons-container" style="justify-content: left;">
+            <i class="fas fa-question-circle" style="margin-right: 20px;"></i>
+            <i class="fas fa-cog"></i>
+        </div>
+        <div class="profile-info">
+            <div class="profile-details">
+                <span class="profile-name">Nombre del Usuario</span>
+                <br>
+                <span class="profile-role">Cargo del Usuario</span>
+            </div>
+            <img src="https://via.placeholder.com/40" alt="Foto de Perfil" class="profile-image">
+        </div>
+    </div>
+
+    
+    <!--Menú superior-->
+    <div class="container" style="width: 90%; margin-top: 6%;">
+        <nav class="navbar navbar-expand-lg bg-black">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarWeb">
+                <ul class="navbar-nav mx-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/bookings">Reservas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/acommodations-and-services">Aloamientos y servicios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Check-In</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Check-Out</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Gestión de personal</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Informes y estadísticas</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+
+    <!--Realizar reserva-->
+    <div id="reserva" class="container-degrade-principal" style="margin-top:30px; padding: 20px;">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <h2 class="subtittle" style="font-size: 20px; color: white; margin-left: 30px;">Reservas directas</h2>
+                <p class="text-description text" style="text-align: left; margin-left: 45px;">Buscar disponibilidad de habitaciones</p>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="entrada_date" class="text2" style="color: white;">Fecha de entrada</label>
+                    <input type="date" class="form-control" id="check_in_date" name="check_in_date" style="width: 100%;">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="salida_date" class="text2" style="color: white;">Fecha de salida</label>
+                    <input type="date" class="form-control" id="check_out_date" name="check_out_date" style="width: 100%;">
+                </div>
+            </div> 
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label for="cantidad_personas" class="text2" style="color: white;">Huespedes</label>
+                    <select class="form-select" id="cantidad_personas" name="cantidad_personas">
+                        <option selected>Seleccionar</option>
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas</option>
+                        <option value="3">3 personas</option>
+                        <option value="4">4 personas</option>
+                        <option value="5">5 personas</option>
+                    </select>
+                </div>
+            </div>                    
+            <div class="col-md-2">
+                <button class="btn btn-app" style="margin-top: 30px;" routerLink="/bookings/search-reservation" >Buscar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Galería de reservas -->
+    <div class="container my-4 mt-4">
+        <div class="row">
+            <div class="gallery-header">
+                <div>
+                    <h2 class="tittle2">Reservas</h2>
+                    <p class="text">¡Preparate! Tienes las siguientes reservas en tu alojamiento</p>
+                </div>
+                <div class="gallery-action">
+                    <a href="#" class="ver-reservas">Ver más reservas</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img src="https://via.placeholder.com/300x200/FFFFFF/000000?text=Imagen+1" alt="reserva 1" class="img-fluid">
+                <p class="text-center text2" style="margin-bottom: 0;">Reserva 1</p>
+                <p class="text-center text">Ingreso el [fecha] a las [hora]</p>
+            </div>
+            <div class="col-md-3">
+                <img src="https://via.placeholder.com/300x200/FFFFFF/000000?text=Imagen+2" alt="reserva 2" class="img-fluid">
+                <p class="text-center text2" style="margin-bottom: 0;">Reserva 2</p>
+                <p class="text-center text">Ingreso el [fecha] a las [hora]</p>
+            </div>
+            <div class="col-md-3">
+                <img src="https://via.placeholder.com/300x200/FFFFFF/000000?text=Imagen+3" alt="reserva 3" class="img-fluid">
+                <p class="text-center text2" style="margin-bottom: 0;">Reserva 3</p>
+                <p class="text-center text">Ingreso el [fecha] a las [hora]</p>
+            </div>
+            <div class="col-md-3">
+                <img src="https://via.placeholder.com/300x200/FFFFFF/000000?text=Imagen+4" alt="reserva 4" class="img-fluid">
+                <p class="text-center text2" style="margin-bottom: 0;">Reserva 4</p>
+                <p class="text-center text">Ingreso el [fecha] a las [hora]</p>
+            </div>
+        </div>
+    </div>
+
+    <!--Realizar reserva de servicio-->
+    <div id="reserva" class="container-degrade" style="margin-top:30px; padding: 20px;">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <h2 class="subtittle" style="font-size: 20px; margin-left: 30px;">Reserva de servicios</h2>
+                <p class="text-description text" style="text-align: left; margin-left: 45px;">Buscar el servicio a reservar</p>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="cantidad_personas" class="text2">Servicios</label>
+                    <select class="form-select" id="cantidad_personas" name="cantidad_personas">
+                        <option selected>Seleccionar</option>
+                        <option value="1">servicio 1</option>
+                        <option value="2">servicio 2</option>
+                        <option value="3">servicio 3</option>
+                        <option value="4">servicio 4</option>
+                        <option value="5">servicio 5</option>
+                    </select>
+                </div>
+            </div>      
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="inicio_date" class="text2">Fecha de inicio</label>
+                    <input type="date" class="form-control" id="inicio_servicio" name="inicio_servicio" style="width: 100%;">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="fnalizacion_date" class="text2">Fecha de finalización</label>
+                    <input type="date" class="form-control" id="finalizacion_servicio" name="finalizacion_servicio" style="width: 100%;">
+                </div>
+            </div>               
+            <div class="col-md-2">
+                <button class="btn btn-primary" style="margin-top: 30px;" >Buscar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Galería de servicios -->
+    <div class="container my-4 mt-4">
+        <div class="row">
+            <div class="gallery-header">
+                <div>
+                    <h2 class="tittle2">Servicios</h2>
+                    <p class="text">Estos son los serivcios reservados que tiene tu hospedaje</p>
+                </div>
+                <div class="gallery-action">
+                    <a href="#" class="ver-reservas">Ver más servicios reservados</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img src="https://via.placeholder.com/300x200/FFFFFF/000000?text=Imagen+1" alt="reserva 1" class="img-fluid">
+                <p class="text-center text2" style="margin-bottom: 0;">Servicio 1</p>
+                <p class="text-center text">Ingreso el [fecha] a las [hora]</p>
+            </div>
+            <div class="col-md-3">
+                <img src="https://via.placeholder.com/300x200/FFFFFF/000000?text=Imagen+2" alt="reserva 2" class="img-fluid">
+                <p class="text-center text2" style="margin-bottom: 0;">Servicio 2</p>
+                <p class="text-center text">Ingreso el [fecha] a las [hora]</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ 
+</body>
