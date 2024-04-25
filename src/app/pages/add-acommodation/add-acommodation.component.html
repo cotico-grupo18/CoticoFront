@@ -1,1 +1,106 @@
-<p>add-acommodation works!</p>
+<body>
+     <!--Perfil-->
+     <div class="header-rectangle">
+        <div class="brand-info">
+            <img src="assets/img/Logo_CoticoStay_Blanco.png" alt="Logo de la Marca" class="brand-logo">
+            <span class="marca">CoticoStay</span>
+        </div>
+        <div class="icons-container" style="justify-content: left;">
+            <i class="fas fa-question-circle" style="margin-right: 20px;"></i>
+            <i class="fas fa-cog"></i>
+        </div>
+        <div class="profile-info">
+            <div class="profile-details">
+                <span class="profile-name">Nombre del Usuario</span>
+                <br>
+                <span class="profile-role">Cargo del Usuario</span>
+            </div>
+            <img src="https://via.placeholder.com/40" alt="Foto de Perfil" class="profile-image">
+        </div>
+    </div>
+
+    <!--Menú superior-->
+    <div class="container" style="width: 90%; margin-top: 6%;">
+        <nav class="navbar navbar-expand-lg bg-black">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarWeb">
+                <ul class="navbar-nav mx-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/bookings">Reservas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/acommodations-and-services">Aloamientos y servicios</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Check-In</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Check-Out</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Gestión de personal</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Informes y estadísticas</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;" > 
+        <form (ngSubmit)="submitForm()">
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                    <h1 class="subtittle mb-4">Añadir alojamiento</h1>
+                    <!-- Insertar imagen -->
+                    <img src="https://via.placeholder.com/650x380" alt="Imagen de la habitación" class="img-fluid">
+                </div>
+                <!-- Formulario para registrar alojamiento -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="nombreAlojamiento" class="text2 mb-1">Nombre del alojamiento u habitación</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Ingrese el nombre del alojamiento">
+                        <div class="row mt-2 justify-content-center mb-3">
+                            <div class="col-md-6">
+                                <label for="cantidadPersonas" class="text2">Ocupación máxima</label>
+                                <input type="number" class="form-control" id="cantidad" name="cantidad" [(ngModel)]="ocupacionMaxima" min="1" step="1" placeholder="Ocupación máxima">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="precio" class="text2">Precio por noche</label>
+                                <input type="number" class="form-control" id="precio" name="precio" [(ngModel)]="precioPorNoche" min="0" step="0.01" placeholder="Precio del alojamiento">
+                            </div>
+                        </div>
+                        <!-- Checklist de servicios -->
+                        <div class="form-group">
+                            <label class="text2">Servicios:</label><br>
+                            <div class="form-check" *ngFor="let servicio of servicios">
+                                <input class="form-check-input" type="checkbox" [id]="servicio.id" [name]="servicio.id" [(ngModel)]="servicio.selected">
+                                <label class="form-check-label" [for]="servicio.id">{{ servicio.nombre }}</label>
+                            </div>
+                            <div class="form-group mt-3" *ngIf="otrosSeleccionado">
+                                <input type="text" class="form-control" id="otroServicio" name="otroServicio" placeholder="Ingrese otro servicio">
+                                <button type="button" class="btn btn-outline-primary mt-2" (click)="agregarOtroServicio()">Añadir</button>
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="agregarOtros" name="agregarOtros" [(ngModel)]="otrosSeleccionado">
+                            <label class="form-check-label" for="agregarOtros">Agregar otros servicios</label>
+                        </div>
+                    </div>   
+                </div>
+                <div class="row mt-3 justify-content-center mb-5">
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-secondary w-100" (click)="cancelar()">Cancelar</button>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary w-100">Reservar</button>
+                    </div>
+                </div>
+            </div>
+        </form>        
+    </div>
+</body>

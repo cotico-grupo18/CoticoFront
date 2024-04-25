@@ -9,6 +9,7 @@ import { CreateReservationComponent } from './pages/create-reservation/create-re
 import { CreateServiceComponent } from './pages/create-service/create-service.component';
 import { AccommodationsAndServicesComponent } from './pages/accommodations-and-services/accommodations-and-services.component';
 import { SearchReservationsComponent } from './pages/search-reservations/search-reservations.component';
+import { AddAcommodationComponent } from './pages/add-acommodation/add-acommodation.component';
 
 const routes: Routes = [
   {path: 'validacion_hotel', component: ValidateHotelComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'acommodations-and-services', component: AccommodationsAndServicesComponent},
   {path: 'bookings/search-reservation', component: SearchReservationsComponent}, // Falta el search-services
   {path: 'bookings/search-reservation/create-reservation', component: CreateReservationComponent},
+  {path: 'acommodations-and-services/add-acommodation', component: AddAcommodationComponent}
 ];
 
 @NgModule({
