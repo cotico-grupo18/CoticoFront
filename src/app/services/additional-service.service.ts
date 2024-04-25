@@ -11,22 +11,22 @@ export class AdditionalServiceService {
   constructor(private http: HttpClient) { }
 
   createAdditionalService(additionalService: AdditionalService): Observable<AdditionalService> {
-    const url = `${environment}`;
+    const url = `${environment.additionalServiceURL}`;
     return this.http.post<AdditionalService>(url, additionalService);
   }
 
   getAdditionalServices(): Observable<AdditionalService[]> {
-    const url = `${environment}`;
+    const url = `${environment.additionalServiceURL}`;
     return this.http.get<AdditionalService[]>(url);
   }
 
   deleteAdditionalService(additionalServiceId: number): Observable<any> {
-    const url = `${environment}${additionalServiceId}`;
+    const url = `${environment.additionalServiceURL}${additionalServiceId}`;
     return this.http.delete<any>(url);
   }
 
   updateAdditionalService(additionalServiceId: number, updatedAdditionalService: AdditionalService): Observable<AdditionalService> {
-    const url = `${environment}${additionalServiceId}`;
+    const url = `${environment.additionalServiceURL}${additionalServiceId}`;
     return this.http.put<AdditionalService>(url, updatedAdditionalService);
   }
 }

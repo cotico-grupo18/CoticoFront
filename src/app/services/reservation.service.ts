@@ -11,22 +11,22 @@ export class ReservationService {
   constructor(private http: HttpClient) { }
 
   createReservation(reservation: Reservation): Observable<Reservation> {
-    const url = `${environment}`;
+    const url = `${environment.reservationURL}`;
     return this.http.post<Reservation>(url, reservation);
   }
 
   getReservations(): Observable<Reservation[]> {
-    const url = `${environment}`;
+    const url = `${environment.reservationURL}`;
     return this.http.get<Reservation[]>(url);
   }
 
   deleteReservation(reservationId: number): Observable<any> {
-    const url = `${environment}${reservationId}`;
+    const url = `${environment.reservationURL}${reservationId}`;
     return this.http.delete<any>(url);
   }
 
   updateReservation(reservationId: number, updatedReservation: Reservation): Observable<Reservation> {
-    const url = `${environment}${reservationId}`;
+    const url = `${environment.reservationURL}${reservationId}`;
     return this.http.put<Reservation>(url, updatedReservation);
   }
 }
