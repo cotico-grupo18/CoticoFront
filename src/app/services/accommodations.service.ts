@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
-@Injectable({
+@Injectable({ //HOLAAA
   providedIn: 'root'
 })
 export class AccommodationsService {
