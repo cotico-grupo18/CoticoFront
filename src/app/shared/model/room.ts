@@ -1,4 +1,4 @@
-interface Room {
+export interface Room {
     id?: number;
     typeRoom: string;
     status: string;

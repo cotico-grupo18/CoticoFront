@@ -325,4 +325,61 @@ body { // Fondo general
     border-top-right-radius: 7px;
     border-bottom-right-radius: 7px;
 }
+
+// imagenes
+.image-container-add {
+    width: 400px; /* Ancho máximo del contenedor */
+    height: 260px; /* Altura máxima del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta el exceso de imagen */
+    position: relative; /* Permite posicionar la imagen dentro del contenedor */
+  }
+  
+  .image-container-add img {
+    min-width: 100%; /* La imagen no superará el ancho del contenedor */
+    min-height: 100%; /* La imagen no superará la altura del contenedor */
+    width: auto; /* Permite que la imagen se ajuste proporcionalmente */
+    height: auto; 
+  }
+
+  .img-fluid-view{
+    width: 400px; /* Ancho máximo del contenedor */
+    height: 260px; /* Altura máxima del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta el exceso de imagen */
+    position: relative; /* Permite posicionar la imagen dentro del contenedor */
+  }
+
+  .img-flud-view img {
+    min-width: 100%; /* La imagen no superará el ancho del contenedor */
+    min-height: 100%; /* La imagen no superará la altura del contenedor */
+    width: auto; /* Permite que la imagen se ajuste proporcionalmente */
+    height: auto; 
+  }
+
+  .img-fluid-staff{
+    width: 200px; /* Ancho máximo del contenedor */
+    height: 200px; /* Altura máxima del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta el exceso de imagen */
+    position: relative; /* Permite posicionar la imagen dentro del contenedor */
+  }
+
+  .img-fluid-staff-amp{
+    width: 300px; /* Ancho máximo del contenedor */
+    height: 300px; /* Altura máxima del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta el exceso de imagen */
+    position: relative; /* Permite posicionar la imagen dentro del contenedor */
+  }
+  
+  
   

@@ -1,4 +1,4 @@
-interface Staff {
+export interface Staff {
     id?: number;
     position: string;
     shift: string;

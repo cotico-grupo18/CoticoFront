@@ -1,3 +1,6 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
 <body>
      <!--Perfil-->
      <div class="header-rectangle">
@@ -32,16 +35,16 @@
                     <a class="nav-link" href="/bookings">Reservas</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/acommodations-and-services">Aloamientos y servicios</a>
+                    <a class="nav-link" href="/accommodations-and-services">Aloamientos y servicios</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Check-In</a>
+                    <a class="nav-link" href="/check-in">Check-In</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Check-Out</a>
+                    <a class="nav-link" href="/check-out">Check-Out</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Gestión de personal</a>
+                    <a class="nav-link" href="/staff-management">Gestión de personal</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Informes y estadísticas</a>
@@ -51,16 +54,25 @@
             </div>
         </nav>
     </div>
-    <div class="container" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;" > 
+    <div class="container mb-5" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;" > 
         <form (ngSubmit)="submitForm()">
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-6">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-5">
                     <h1 class="subtittle mb-4">Añadir alojamiento</h1>
                     <!-- Insertar imagen -->
-                    <img src="https://via.placeholder.com/650x380" alt="Imagen de la habitación" class="img-fluid">
+                    <div class="image-container-add">
+                        <img [src]="imagenSeleccionada ? imagenSeleccionada : 'https://via.placeholder.com/500x300'" alt="Imagen de la habitación">
+                      </div>
+                    <!-- Campo para cargar imagen -->
+                    <div class="form-group mt-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="imagen" (change)="archivoSeleccionado($event)" accept="image/png, image/jpeg">
+                            <label class="custom-file-label" for="imagen">Cargar imagen...</label>
+                        </div>
+                    </div>                    
                 </div>
                 <!-- Formulario para registrar alojamiento -->
-                <div class="col-md-4">
+                <div class="col-md-5 mt-4">
                     <div class="form-group">
                         <label for="nombreAlojamiento" class="text2 mb-1">Nombre del alojamiento u habitación</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Ingrese el nombre del alojamiento">
@@ -71,34 +83,43 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="precio" class="text2">Precio por noche</label>
-                                <input type="number" class="form-control" id="precio" name="precio" [(ngModel)]="precioPorNoche" min="0" step="0.01" placeholder="Precio del alojamiento">
+                                <input type="number" class="form-control" id="precio" name="precio" [(ngModel)]="precioPorNoche" min="0" step="0.001" placeholder="Precio del alojamiento">
                             </div>
-                        </div>
-                        <!-- Checklist de servicios -->
-                        <div class="form-group">
                             <label class="text2">Servicios:</label><br>
-                            <div class="form-check" *ngFor="let servicio of servicios">
+                            <div class="form-check ml-5" *ngFor="let servicio of servicios">
                                 <input class="form-check-input" type="checkbox" [id]="servicio.id" [name]="servicio.id" [(ngModel)]="servicio.selected">
                                 <label class="form-check-label" [for]="servicio.id">{{ servicio.nombre }}</label>
                             </div>
-                            <div class="form-group mt-3" *ngIf="otrosSeleccionado">
-                                <input type="text" class="form-control" id="otroServicio" name="otroServicio" placeholder="Ingrese otro servicio">
-                                <button type="button" class="btn btn-outline-primary mt-2" (click)="agregarOtroServicio()">Añadir</button>
+                            <!-- Agregar otro servicio-->
+                            <div class="container ml-4">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" id="otroServicio" name="otroServicio" [(ngModel)]="otrosSeleccionado">
+                                  <label class="form-check-label text" for="otroServicio">Otros servicios</label>
+                                </div>
+                                <div class="form-group mt-3" *ngIf="otrosSeleccionado">
+                                    <div *ngFor="let servicio of otrosServicios; let i = index">
+                                      <input type="text" class="form-control mb-2" [(ngModel)]="servicio.nombre" [disabled]="i !== 0 && !otrosSeleccionado" placeholder="Ingrese el servicio">
+                                    </div>
+                                    <!-- Botón para añadir servicio -->
+                                    <button type="button" class="btn btn-outline-primary mb-2 mr-2" (click)="agregarOtroServicio()">
+                                      <i class="fas fa-plus"></i>
+                                    </button>
+                                    <!-- Botón para eliminar servicio -->
+                                    <button type="button" class="btn btn-outline-danger mb-2 mr-2" *ngIf="otrosServicios.length > 1" (click)="eliminarUltimoOtroServicio()">
+                                      <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="agregarOtros" name="agregarOtros" [(ngModel)]="otrosSeleccionado">
-                            <label class="form-check-label" for="agregarOtros">Agregar otros servicios</label>
+                    </div>
+                    <div class="row mt-3 justify-content-center mb-5">
+                        <div class="col-md-5">
+                            <button type="button" class="btn btn-secondary w-100" (click)="cancelar()">Cancelar</button>
+                        </div>
+                        <div class="col-md-5">
+                            <button type="submit" class="btn btn-primary w-100">Añadir</button>
                         </div>
                     </div>   
-                </div>
-                <div class="row mt-3 justify-content-center mb-5">
-                    <div class="col-md-3">
-                        <button type="button" class="btn btn-secondary w-100" (click)="cancelar()">Cancelar</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button type="submit" class="btn btn-primary w-100">Reservar</button>
-                    </div>
                 </div>
             </div>
         </form>        

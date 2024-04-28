@@ -14,7 +14,16 @@ import { SignupHotelComponent } from './pages/signup-hotel/signup-hotel.componen
 import { SignupHotelLastStepComponent } from './pages/signup-hotel-last-step/signup-hotel-last-step.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { AccommodationsAndServicesComponent } from './pages/accommodations-and-services/accommodations-and-services.component';
-import { AddAcommodationComponent } from './pages/add-acommodation/add-acommodation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddAdditonalServiceComponent } from './pages/add-additonal-service/add-additonal-service.component';
+import { AddAccommodationComponent } from './pages/add-accommodation/add-accommodation.component';
+import { DeleteAccommodationComponent } from './pages/delete-accommodation/delete-accommodation.component';
+import { DeleteServiceComponent } from './pages/delete-service/delete-service.component';
+import { CheckInComponent } from './pages/check-in/check-in.component';
+import { CheckOutComponent } from './pages/check-out/check-out.component';
+import { StaffManagementComponent } from './pages/staff-management/staff-management.component';
+import { DeleteStaffComponent } from './pages/delete-staff/delete-staff.component';
+import { AddStaffComponent } from './pages/add-staff/add-staff.component';
 
 
 @NgModule({
@@ -29,13 +38,22 @@ import { AddAcommodationComponent } from './pages/add-acommodation/add-acommodat
     SignupHotelLastStepComponent,
     SignInComponent,
     AccommodationsAndServicesComponent,
-    AddAcommodationComponent
+    AddAdditonalServiceComponent,
+    AddAccommodationComponent,
+    DeleteAccommodationComponent,
+    DeleteServiceComponent,
+    CheckInComponent,
+    CheckOutComponent,
+    StaffManagementComponent,
+    DeleteStaffComponent,
+    AddStaffComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

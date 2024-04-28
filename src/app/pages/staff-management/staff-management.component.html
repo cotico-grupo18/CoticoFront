@@ -57,82 +57,50 @@
     <div class="container" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;" >
         <!-- Encabezado, buscador y filtro -->
         <div class="container mt-4">
-            <div class="subtittle ml-5">Alojamientos y Servicios
-                <p class="text" style="margin-left: 20px;">Busca el alojamiento o servicio que necesites modificar o eliminar</p>
+            <div class="subtittle ml-5">Gestión de personal
+                <p class="text" style="margin-left: 20px;">Busca el personal con el que cuenta tu hospedaje</p>
             </div>
             <div class="input-group d-flex justify-content-center">
                 <div class="form-outline flex-grow-1" data-mdb-input-init style="max-width: 400px;">
-                    <input id="search-focus" type="search" id="buscar" class="form-control" style="width: 100%;" placeholder="Buscar alojamiento o servicio">
+                    <input id="search-focus" type="search" id="buscar" class="form-control" style="width: 100%;" placeholder="Buscar nombre o cargo">
                 </div>
                 <button type="button" class="btn btn-simple align-self-center" data-mdb-ripple-init style="height: 100%;">
                     <i class="fas fa-search"></i>
                 </button>
             </div>  
         </div>
-        <!-- Añadir alojamiento y servicio--> 
         <div class="d-flex justify-content-end mt-4 mr-5">
-            <button type="button" class="btn btn-info mr-3" routerLink="/accommodations-and-services/add-accommodation">Añadir Alojamiento</button>
-            <button type="button" class="btn btn-info" routerLink="/accommodations-and-services/add-additional-service">Añadir Servicio</button>
+            <button type="button" class="btn btn-info mr-3" routerLink="/staff-management/add-staff">Añadir Personal</button>
         </div>
         <!-- Lista de reservas -->
         <div class="row reserva-list justify-content-center mt-4">
-            <!-- Reserva alojamiento -->
-            <div class="col-md-10 col-lg-9 reserva-item mb-4">
+            <!-- Información del personal -->
+            <div class="col-md-5 col-lg-9 reserva-item mb-4">
                 <div class="row align-items-center">
                     <!-- Imagen de la reserva -->
-                    <div class="col-md-4 text-center">
-                        <img src="https://via.placeholder.com/500x300" alt="Imagen Reserva" class="img-fluid" style="max-width: 100%; height: auto;">
+                    <div class="col-md-4 d-flex justify-content-center align-items-center">
+                        <img src="https://via.placeholder.com/500x300" alt="Imagen Reserva" class="img-fluid-staff" >
                     </div>
                     <!-- Información de la reserva -->
                     <div class="col-md-8">
                         <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h3 class="subtittle">Nombre de la habitación</h3>
-                            <div>
-                                <!-- Icono de editar -->
-                                <button class="btn btn-link text-primary me-3" title="Editar" >
-                                    <i class="fas fa-edit fa-lg"></i>
-                                </button>
-                                <!-- Icono de eliminar -->
-                                <button class="btn btn-link text-danger" title="Eliminar">
-                                    <i class="fas fa-trash-alt fa-lg" routerLink="/accommodations-and-services/delete-accommodation"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="info-details text-start">
-                            <p class="text"><span class="text3">Cantidad de ocupantes:</span> [cantidad]</p>
-                            <p class="text"><span class="text3">Servicios de alojamiento:</span> [servicios]</p>
-                            <p class="text"><span class="text3">Precio por noche:</span> $[precio]</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Reserva servicios -->
-            <div class="col-md-10 col-lg-9 reserva-item mb-4">
-                <div class="row align-items-center">
-                    <!-- Imagen de la reserva -->
-                    <div class="col-md-4 text-center">
-                        <img src="https://via.placeholder.com/500x300" alt="Imagen Reserva" class="img-fluid" style="max-width: 100%; height: auto;">
-                    </div>
-                    <!-- Información de la reserva -->
-                    <div class="col-md-8">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h3 class="subtittle">Nombre del servicio</h3>
+                            <p class="text"><span class="text3">Nombre:</span> [nombre]</p>
                             <div>
                                 <!-- Icono de editar -->
                                 <button class="btn btn-link text-primary me-3" title="Editar">
                                     <i class="fas fa-edit fa-lg"></i>
                                 </button>
                                 <!-- Icono de eliminar -->
-                                <button class="btn btn-link text-danger" routerLink="/accommodations-and-services/delete-service" title="Eliminar">
+                                <button class="btn btn-link text-danger" routerLink="/staff-management/delete-staff" title="Eliminar">
                                     <i class="fas fa-trash-alt fa-lg"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="info-details text-start">
-                            <p class="text"><span class="text3">Cantidad de ocupantes:</span> [cantidad]</p>
-                            <p class="text"><span class="text3">Disponibilidad de reserva:</span> [Dia y hora /posible formato: Lun: 8:00 a.m- 18:00 p.m, Mar:9:00 a.m-15:00 p.m,...]</p>
-                            <p class="text"><span class="text3">Planes:</span> [Planes / posible formato: /tirulo plan/-/precio/. EJ: plan basico-$15.000, plan familiar-$20.000]</p>
+                            <p class="text"><span class="text3">Cargo:</span> [cargo]</p>
+                            <p class="text"><span class="text3">Teléfono:</span> [telefono]</p>
+                            <p class="text"><span class="text3">Correo:</span> [correo]</p>
+                            <p class="text"><span class="text3">Turno:</span> [Lunes] ([Hora]-[Hora]),</p>
                         </div>
                     </div>
                 </div>
