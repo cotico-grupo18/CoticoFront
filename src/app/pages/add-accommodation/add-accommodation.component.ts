@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 interface Servicio {
   id: string;
@@ -13,49 +14,75 @@ interface Servicio {
 })
 export class AddAccommodationComponent {
   nombre: string = '';
-  ocupacionMaxima: number = 1; // Determinar que la ocupación debe ser mínimo 1
+  ocupacionMaxima: number = 1;
   precioPorNoche: number = 0; 
-  otrosSeleccionado: boolean = false; // El check de otros servicios por defecto está desactivado
-  servicios: Servicio[] = [ // Servicios determinados por el sistema se pueden añadir más
+  otrosSeleccionado: boolean = false;
+  servicios: Servicio[] = [ 
     { id: 'tv', nombre: 'Televisor', selected: false },
     { id: 'toallas', nombre: 'Toallas', selected: false },
     { id: 'aireAcondicionado', nombre: 'Aire acondicionado', selected: false },
     { id: 'wifiGratis', nombre: 'WiFi gratis', selected: false }
   ];
-  otrosServicios: { nombre: string }[] = [{ nombre: '' }]; // Servicios adicionales
-  imagenSeleccionada: string = ''; // Variable para almacenar la URL de la imagen seleccionada
+  otrosServicios: { nombre: string }[] = [{ nombre: '' }];
+  imagenSeleccionada: string = ''; 
 
   agregarOtroServicio() {
     this.otrosServicios.push({ nombre: '' });
   }
 
-  eliminarUltimoOtroServicio() { //Eliminar el ultimo campo adicionado como otro servicio
+  eliminarUltimoOtroServicio() {
     if (this.otrosServicios.length > 1) {
       this.otrosServicios.pop();
     }
   }
 
   archivoSeleccionado(event: any) {
-    const file: File = event.target.files[0];
-    if (file) {
+    const archivo: File = event.target.files[0];
+    if (archivo) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
         this.imagenSeleccionada = e.target.result;
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(archivo);
     }
-  } 
+  }
   
-  
-
-      
-  
-  cancelar() {
-    // Lógica para el boton cancelar 
+  alertaExito() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Éxito',
+      text: 'El alojamiento se añadió correctamente.',
+      confirmButtonText: 'Aceptar'
+    }).then(() => {
+      window.location.href = '/accommodations-and-services';
+    });
   }
 
-  submitForm(){
-    // Lógica para enviar el formulario
+  alertaError() {
+  Swal.fire({
+    icon: 'error',
+    title: 'Error',
+    text: 'Por favor, complete todos los campos antes de continuar.',
+    confirmButtonText: 'Aceptar'
+  });
+}
+ 
+validarFormulario() {
+  if (this.camposValidos()) {
+    this.alertaExito();
+  } else {
+    this.alertaError();
   }
+}
+
+camposValidos(): boolean {
+  return !!(
+    this.nombre &&
+    this.ocupacionMaxima &&
+    this.precioPorNoche &&
+    this.imagenSeleccionada
+  );
+}
+  
 
 }

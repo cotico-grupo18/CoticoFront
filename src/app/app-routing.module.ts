@@ -18,16 +18,21 @@ import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { StaffManagementComponent } from './pages/staff-management/staff-management.component';
 import { DeleteStaffComponent } from './pages/delete-staff/delete-staff.component';
 import { AddStaffComponent } from './pages/add-staff/add-staff.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { ViewReservationComponent } from './pages/view-reservation/view-reservation.component';
+import { ReportsAndStatisticsComponent } from './pages/reports-and-statistics/reports-and-statistics.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/landing_page_coticoStay', pathMatch: 'full' }, 
+  {path: 'landing_page_coticoStay', component: LandingComponent},
   {path: 'validacion_hotel', component: ValidateHotelComponent},
   {path: 'signup', component: SignupHotelComponent},
   {path: 'signup/last_step', component: SignupHotelLastStepComponent},
   {path: 'signin', component: SignInComponent},
   {path: 'bookings', component: BookingsComponent},
-  {path: 'bookings/create-service', component: CreateServiceComponent}, // Arreglar
+  {path: 'bookings/create-service', component: CreateServiceComponent}, 
   {path: 'accommodations-and-services', component: AccommodationsAndServicesComponent},
-  {path: 'bookings/search-reservation', component: SearchReservationsComponent}, // Falta el search-services
+  {path: 'bookings/search-reservation', component: SearchReservationsComponent}, 
   {path: 'bookings/search-reservation/create-reservation', component: CreateReservationComponent},
   {path: 'accommodations-and-services/add-accommodation', component: AddAccommodationComponent},
   {path: 'accommodations-and-services/add-additional-service', component: AddAdditonalServiceComponent},
@@ -37,7 +42,9 @@ const routes: Routes = [
   {path: 'check-out', component: CheckOutComponent},
   {path: 'staff-management', component: StaffManagementComponent},
   {path: 'staff-management/delete-staff', component: DeleteStaffComponent},
-  {path: 'staff-management/add-staff', component: AddStaffComponent}
+  {path: 'staff-management/add-staff', component: AddStaffComponent},
+  {path: 'view-reservation', component: ViewReservationComponent},
+  {path: 'reportsAnsStatistics', component: ReportsAndStatisticsComponent}
 ];
 
 @NgModule({

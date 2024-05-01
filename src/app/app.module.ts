@@ -24,6 +24,9 @@ import { CheckOutComponent } from './pages/check-out/check-out.component';
 import { StaffManagementComponent } from './pages/staff-management/staff-management.component';
 import { DeleteStaffComponent } from './pages/delete-staff/delete-staff.component';
 import { AddStaffComponent } from './pages/add-staff/add-staff.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { ViewReservationComponent } from './pages/view-reservation/view-reservation.component';
+import { ReportsAndStatisticsComponent } from './pages/reports-and-statistics/reports-and-statistics.component';
 
 
 @NgModule({
@@ -47,6 +50,9 @@ import { AddStaffComponent } from './pages/add-staff/add-staff.component';
     StaffManagementComponent,
     DeleteStaffComponent,
     AddStaffComponent,
+    LandingComponent,
+    ViewReservationComponent,
+    ReportsAndStatisticsComponent,
   ],
   imports: [
     BrowserModule,

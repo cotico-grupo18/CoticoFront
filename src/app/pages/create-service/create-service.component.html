@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <!--Perfil-->
     <div class="header-rectangle">
@@ -26,36 +27,37 @@
     <div class="container" style="width: 90%; margin-top: 6%;">
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarWeb">
-                <ul class="navbar-nav mx-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="/bookings">Reservas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/acommodations-and-services">Aloamientos y servicios</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/check-in">Check-In</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/check-out">Check-Out</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/staff-management">Gestión de personal</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Informes y estadísticas</a>
-                  </li>
-                </ul>
-              </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarWeb">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/bookings">Reservas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/acommodations-and-services">Aloamientos y servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/check-in">Check-In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/check-out">Check-Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/staff-management">Gestión de personal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/reportsAnsStatistics">Informes y estadísticas</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </nav>
+        </nav>
     </div>
 
-    <div class="container" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;" >
+    <div class="container" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;">
         <div class="color-container mt-4 mb-3" style="margin-right: auto; margin-left: auto;">
             <h2 class="subtittle">Crear reserva de servicio</h2>
         </div>
@@ -70,28 +72,32 @@
                 </div>
                 <div class="col-md-4">
                     <!-- Formulario para datos del huésped -->
-                        <h2 class="subtittle" style="font-size: 20px;">Datos del huesped</h2>
-                        <div class="form-group">
-                            <select class="form-select" id="habitacion" name="habitacion">
-                                <option selected>Seleccionar habitación del huesped</option>
-                                <option value="habitacion1">Habitación 1</option>
-                                <option value="habitacion2">Habitación 2</option>
-                                <option value="habitacion3">Habitación 3</option>
-                                <option value="habitacion4">Habitación 4</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del huesped" readonly>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellidos del huesped" readonly>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" readonly>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo electrónico" readonly>
-                        </div>
+                    <h2 class="subtittle" style="font-size: 20px;">Datos del huesped</h2>
+                    <div class="form-group">
+                        <select class="form-select" id="habitacion" name="habitacion">
+                            <option selected>Seleccionar habitación del huesped</option>
+                            <option value="habitacion1">Habitación 1</option>
+                            <option value="habitacion2">Habitación 2</option>
+                            <option value="habitacion3">Habitación 3</option>
+                            <option value="habitacion4">Habitación 4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="nombre" name="nombre"
+                            placeholder="Nombre del huesped" readonly>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="apellido" name="apellido"
+                            placeholder="Apellidos del huesped" readonly>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono"
+                            readonly>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="correo" name="correo"
+                            placeholder="Correo electrónico" readonly>
+                    </div>
                 </div>
                 <div class="container mt-4">
                     <div class="row justify-content-center">
@@ -135,9 +141,10 @@
                             <div class="form-group">
                                 <label for="check_out_reserva">Fecha y Hora de Salida:</label>
                                 <input type="datetime-local" class="form-control" id="check_out" name="check_out">
-                            </div>   
+                            </div>
                             <div class="form-group">
-                                <input type="number" class="form-control " id="cantidad" name="cantidad" min="1" step="1" placeholder="Cantidad de personas">
+                                <input type="number" class="form-control " id="cantidad" name="cantidad" min="1"
+                                    step="1" placeholder="Cantidad de personas">
                             </div>
                             <div class="form-group">
                                 <select class="form-select" id="habitacion" name="habitacion">
@@ -146,7 +153,7 @@
                                     <option value="habitacion2">Plan estándar</option>
                                     <option value="habitacion3">Plan premium</option>
                                 </select>
-                            </div> 
+                            </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -158,7 +165,8 @@
                                     <div class="form-group">
                                         <label for="descuento" class="fw-bold">Descuento (%):</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="descuento" name="descuento" aria-label="Descuento" aria-describedby="basic-addon2">
+                                            <input type="text" class="form-control" id="descuento" name="descuento"
+                                                aria-label="Descuento" aria-describedby="basic-addon2">
                                             <span class="input-group-text" id="basic-addon2">%</span>
                                         </div>
                                     </div>
@@ -166,7 +174,8 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="precioTotal" class="fw-bold">Precio Total:</label>
-                                        <input type="text" class="form-control" id="precioTotal" name="precioTotal" readonly>
+                                        <input type="text" class="form-control" id="precioTotal" name="precioTotal"
+                                            readonly>
                                     </div>
                                 </div>
                             </div>

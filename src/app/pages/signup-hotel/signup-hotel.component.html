@@ -12,23 +12,25 @@
                         <form style="margin-left: 50px; margin-right: 50px; margin-top: 20px">
                             <div class="form-group">
                                 <label for="hospedaje" class="text">Nombre del Hospedaje:</label>
-                                <input type="text" class="form-control" id="hospedaje" name="hospedaje" placeholder="Nombre del hospedaje" readonly>
+                                <input type="text" class="form-control" id="hospedaje" name="hospedaje" placeholder="Hotel Villa del Mar" readonly>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="pais" class="text">País:</label>
-                                        <select class="form-select" id="pais" name="pais">
-                                            <option value="">Seleccionar país</option>
-                                        </select>
+                                        <select class="form-select" id="pais" name="pais" (change)="cargarCiudades($event)">
+                                            <option disabled selected>Seleccionar país</option>
+                                            <option *ngFor="let pais of paises" [value]="pais">{{ pais }}</option>
+                                        </select>  
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="city" class="text">Ciudad:</label>
-                                        <select class="form-select" id="city" name="city">
-                                            <option value="">Seleccionar ciudad</option>
-                                        </select>
+                                        <select class="form-select form-select-scroll" id="city" name="city">
+                                            <option disabled selected>Seleccionar ciudad</option>
+                                            <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ ciudad }}</option>
+                                        </select>                                          
                                     </div>
                                 </div>
                             </div>   
@@ -73,10 +75,10 @@
                                 </div>                  
                             <div class="row mt-5 justify-content-center align-items-center">
                                 <div class="col text-center">
-                                    <button class="btn btn-secondary px-5 py-1">Regresar</button>
+                                    <button class="btn btn-secondary px-5 py-1" onclick="window.history.back()">Regresar</button>
                                 </div>
                                 <div class="col text-center">
-                                    <button class="btn btn-continue px-5 py-1" routerLink="/signup/last_step">Continuar</button>
+                                    <button class="btn btn-continue px-5 py-1" (click)="continuar()">Continuar</button>
                                 </div>
                             </div>
                         </form>

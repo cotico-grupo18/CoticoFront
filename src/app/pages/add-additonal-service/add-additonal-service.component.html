@@ -1,9 +1,10 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
-     <!--Perfil-->
-     <div class="header-rectangle">
+    <!--Perfil-->
+    <div class="header-rectangle">
         <div class="brand-info">
             <img src="assets/img/Logo_CoticoStay_Blanco.png" alt="Logo de la Marca" class="brand-logo">
             <span class="marca">CoticoStay</span>
@@ -26,59 +27,64 @@
     <div class="container" style="width: 90%; margin-top: 6%;">
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarWeb">
-                <ul class="navbar-nav mx-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="/bookings">Reservas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/accommodations-and-services">Aloamientos y servicios</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/check-in">Check-In</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/check-out">Check-Out</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/staff-management">Gestión de personal</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Informes y estadísticas</a>
-                  </li>
-                </ul>
-              </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarWeb">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/bookings">Reservas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accommodations-and-services">Aloamientos y servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/check-in">Check-In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/check-out">Check-Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/staff-management">Gestión de personal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/reportsAnsStatistics">Informes y estadísticas</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </div>
-    <div class="container mb-5" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;" > 
-        <form (ngSubmit)="submitForm()">
+    <div class="container mb-5" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;">
+        <form>
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-md-5">
                     <h1 class="subtittle mb-4">Añadir servicio</h1>
                     <!-- Insertar imagen -->
                     <div class="image-container-add">
-                        <img [src]="imagenSeleccionada ? imagenSeleccionada : 'https://via.placeholder.com/500x300'" alt="Imagen de la habitación">
-                      </div>
+                        <img [src]="imagenSeleccionada ? imagenSeleccionada : 'https://via.placeholder.com/500x300'"
+                            alt="Imagen de la habitación">
+                    </div>
                     <!-- Campo para cargar imagen -->
                     <div class="form-group mt-3">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="imagen" (change)="archivoSeleccionado($event)" accept="image/png, image/jpeg">
+                            <input type="file" class="custom-file-input" id="imagen"
+                                (change)="archivoSeleccionado($event)" accept="image/png, image/jpeg">
                             <label class="custom-file-label" for="imagen">Cargar imagen...</label>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
-                <!-- Formulario para registrar alojamiento -->
+                <!-- Formulario para registrar servicio -->
                 <div class="col-md-5 mt-4">
                     <div class="form-group">
-                        <label for="nombreAlojamiento" class="text2 mb-1">Nombre del servicio</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Ingrese el nombre del alojamiento">
-                        <!--DISPONIBILIDAD PAR RESERVA--> 
+                        <label for="nombreSericio" class="text2 mb-1">Nombre del servicio</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombreServicio"
+                            placeholder="Ingrese el nombre del alojamiento">
+                        <!--DISPONIBILIDAD PAR RESERVA-->
                         <label for="disponibilidad" class="text2 mt-4 mb-0">Disponibilidad de reserva:</label>
-                        <div class="row align-items-center mt-2" *ngFor="let disponibilidad of dispoReserva; let i = index">
+                        <div class="row align-items-center mt-2"
+                            *ngFor="let disponibilidad of dispoReserva; let i = index">
                             <div class="col-md-4">
                                 <select class="form-select" id="dias" name="dias" [(ngModel)]="dispoReserva[i].dia">
                                     <option value="Seleccionar" disabled selected>Seleccionar día</option>
@@ -86,16 +92,20 @@
                                 </select>
                             </div>
                             <div class="col-md-3" style="max-width: 150px;">
-                                <input type="time" class="form-control" [(ngModel)]="dispoReserva[i].horaInicio" placeholder="Hora de inicio">
+                                <input type="time" class="form-control" [(ngModel)]="dispoReserva[i].horaInicio"
+                                    placeholder="Hora de inicio">
                             </div>
                             <div class="col-md-3" style="max-width: 150px;">
-                                <input type="time" class="form-control" [(ngModel)]="dispoReserva[i].horaFin" placeholder="Hora de fin">
+                                <input type="time" class="form-control" [(ngModel)]="dispoReserva[i].horaFin"
+                                    placeholder="Hora de fin">
                             </div>
-                            <div class="col-auto"> 
-                                <i class="bi bi-trash text-danger" (click)="eliminarDispoReserva(i)" style="cursor: pointer; cursor: pointer; font-size: 1.5rem;"></i>
+                            <div class="col-auto">
+                                <i class="bi bi-trash text-danger" (click)="eliminarDispoReserva(i)"
+                                    style="cursor: pointer; cursor: pointer; font-size: 1.5rem;"></i>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-sm btn-simple mt-3 px-3" (click)="agregarDispoReserva()">Añadir Disponibilidad</button>
+                        <button type="button" class="btn btn-sm btn-simple mt-3 px-3"
+                            (click)="agregarDispoReserva()">Añadir Disponibilidad</button>
                         <!-- PLANES -->
                         <h2 class=" text2 mt-4">Planes</h2>
                         <table class="table">
@@ -112,22 +122,25 @@
                                     <td><input type="text" class="form-control" [(ngModel)]="plan.titulo"></td>
                                     <td><input type="text" class="form-control" [(ngModel)]="plan.descripcion"></td>
                                     <td><input type="number" class="form-control" [(ngModel)]="plan.precio"></td>
-                                    <td><i class="bi bi-trash text-danger" (click)="eliminarPlan(i)" style="cursor: pointer; font-size: 1.5rem;"></i></td>
+                                    <td><i class="bi bi-trash text-danger" (click)="eliminarPlan(i)"
+                                            style="cursor: pointer; font-size: 1.5rem;"></i></td>
                                 </tr>
                             </tbody>
                         </table>
-                        <button type="button" class="btn btn-sm btn-simple" (click)="agregarPlan()">Añadir Plan</button>   
+                        <button type="button" class="btn btn-sm btn-simple" (click)="agregarPlan()">Añadir Plan</button>
                     </div>
                     <div class="row mt-3 justify-content-center mb-5">
                         <div class="col-md-5">
-                            <button type="button" class="btn btn-secondary w-100" (click)="cancelar()">Cancelar</button>
+                            <button type="button" class="btn btn-secondary w-100"
+                                onclick="window.history.back()">Cancelar</button>
                         </div>
                         <div class="col-md-5">
-                            <button type="submit" class="btn btn-primary w-100">Añadir</button>
+                            <button type="submit" class="btn btn-primary w-100"
+                                (click)="validarFormulario()">Añadir</button>
                         </div>
-                    </div>   
+                    </div>
                 </div>
             </div>
-        </form>        
+        </form>
     </div>
 </body>

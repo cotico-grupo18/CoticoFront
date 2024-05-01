@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup-hotel-last-step',
@@ -8,9 +10,9 @@ import { Component } from '@angular/core';
 export class SignupHotelLastStepComponent {
   jornadas: any[] = [];
   diasSemana: string[] = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  cargo: string = '';
 
-  constructor() {
-    // Agregar una jornada por defecto al iniciar el componente
+  constructor(private router: Router) {
     this.agregarJornada();
   }
 
@@ -22,6 +24,15 @@ export class SignupHotelLastStepComponent {
     this.jornadas.splice(index, 1);
   }
 
-  // FALTA: Validar que se pueden crear maximo 7 dias
-  // que todos los campos esten llenos
+  verificarCampos(): void {
+    if (!this.cargo.trim()) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor complete todos los campos del formulario.'
+      });
+      return;
+    }
+    this.router.navigate(['/signin']);
+  }
 }

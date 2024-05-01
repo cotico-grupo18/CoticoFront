@@ -7,28 +7,42 @@
                         <h3 class="tittle text-center">Registrar Hotel</h3>
                     </div>
                     <div class="card-body">
-                        <p class="text text-center">Esta opción solo podrá realizarla el gerente o propietario del hotel quien recibió un código administrativo.</p>
+                        <p class="text text-center">Esta opción solo podrá realizarla el gerente o propietario del hotel
+                            quien recibió un código administrativo.</p>
                     </div>
-                    <div class="card-body" style="margin-top: 15px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
+                    <div class="card-body"
+                        style="margin-top: 15px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;">
                         <p class="subtittle text-center">Validación</p>
-                        <hr style="border: none; height: 3px; background-image: linear-gradient(to right, rgba(90, 190, 73, 1), rgba(34, 52, 88, 1)); margin-top: 4px; width: 600px; margin: 0 auto;">
-                        <form id="validacionForm" style="margin-left: 50px; margin-right: 50px; margin-top: 20px" (ngSubmit)="validarFormulario()">
+                        <hr
+                            style="border: none; height: 3px; background-image: linear-gradient(to right, rgba(90, 190, 73, 1), rgba(34, 52, 88, 1)); margin-top: 4px; width: 600px; margin: 0 auto;">
+                        <form id="validacionForm" style="margin-left: 50px; margin-right: 50px; margin-top: 20px">
                             <div class="form-group">
                                 <label for="propiedad" class="text">Nombre de la propiedad</label>
-                                <select class="form-select" id="nombrePropiedad" [(ngModel)]="nombrePropiedad" name="nombrePropiedad" aria-label="Seleccione el nombre de su propiedad para comenzar el registro" (click)="limpiarErrores()">
-                                    <option value="Seleccionar" disabled>Seleccionar</option> <!--Aquí se debe cargar el nombre de los hospedajes que faltan por haceer el registro-->
-                                    <option *ngFor="let propiedad of propiedades" [value]="propiedad">{{ propiedad }}</option>
+                                <select class="form-select" id="nombrePropiedad" [(ngModel)]="nombrePropiedad"
+                                    name="nombrePropiedad"
+                                    aria-label="Seleccione el nombre de su propiedad para comenzar el registro">
+                                    <option value="Seleccionar" disabled>Seleccionar</option>
+                                    <!--Aquí se debe cargar el nombre de los hospedajes que faltan por haceer el registro-->
+                                    <option *ngFor="let propiedad of propiedades" [value]="propiedad">{{ propiedad }}
+                                    </option>
                                 </select>
-                                <p *ngIf="errorPropiedad" class="text-danger" style="font-size: small;">{{ errorPropiedad }}</p>
+                                <p *ngIf="errorPropiedad" class="text-danger" style="font-size: small;">{{
+                                    errorPropiedad }}</p>
                             </div>
                             <div class="form-group" style="margin-top: 10px;">
                                 <label for="codigo_administrativo" class="text">Código Administrativo</label>
-                                <input type="text" class="form-control" id="codigoAdministrativo" [(ngModel)]="codigoAdministrativo" name="codigoAdministrativo" 
-                                       placeholder="Ingrese su código administrativo" style="width: 400px; margin-top: 5px" (input)="limpiarErrores()">
-                                <p *ngIf="errorCodigoAdministrativo" class="text-danger" style="font-size: small;">{{ errorCodigoAdministrativo }}</p>
+                                <input type="text" class="form-control" id="codigoAdministrativo"
+                                    [(ngModel)]="codigoAdministrativo" name="codigoAdministrativo"
+                                    placeholder="Ingrese su código administrativo"
+                                    style="width: 400px; margin-top: 5px">
+                                <p *ngIf="errorCodigoAdministrativo" class="text-danger" style="font-size: small;">{{
+                                    errorCodigoAdministrativo }}</p>
                             </div>
-                            <button type="validar" id="validarBtn" class="btn btn-primary" style="width: 100px; margin-top: 35px; display: block; margin-left: auto; margin-right: auto;" >Validar</button>
-                            <p *ngIf="errorGeneral" class="text-danger mt-2" style="font-size: small; text-align: center;">{{ errorGeneral }}</p>
+                            <button type="submit" id="validarBtn" class="btn btn-primary"
+                                style="width: 100px; margin-top: 35px; display: block; margin-left: auto; margin-right: auto;"
+                                (click)="validarFormulario()">Validar</button>
+                            <p *ngIf="errorGeneral" class="text-danger mt-2"
+                                style="font-size: small; text-align: center;">{{ errorGeneral }}</p>
                         </form>
                     </div>
                 </div>

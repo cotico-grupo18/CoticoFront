@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <!--Perfil-->
     <div class="header-rectangle">
@@ -14,11 +15,11 @@
         </div>
         <div class="profile-info">
             <div class="profile-details">
-                <span class="profile-name">Nombre del Usuario</span>
+                <span class="profile-name">Carlos Enrique Martinez Restrepo</span>
                 <br>
-                <span class="profile-role">Cargo del Usuario</span>
+                <span class="profile-role">Gernte administrativo</span>
             </div>
-            <img src="https://via.placeholder.com/40" alt="Foto de Perfil" class="profile-image">
+            <img src="assets/img/staff/gerente.jpg" alt="Foto de Perfil" class="profile-image">
         </div>
     </div>
 
@@ -26,113 +27,139 @@
     <div class="container" style="width: 90%; margin-top: 6%;">
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarWeb">
-                <ul class="navbar-nav mx-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="/bookings">Reservas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/accommodations-and-services">Aloamientos y servicios</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/check-in">Check-In</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/check-out">Check-Out</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/staff-management">Gestión de personal</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Informes y estadísticas</a>
-                  </li>
-                </ul>
-              </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarWeb">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/bookings">Reservas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accommodations-and-services">Alojamientos y servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/check-in">Check-In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/check-out">Check-Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/staff-management">Gestión de personal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/reportsAnsStatistics">Informes y estadísticas</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </nav>
+        </nav>
     </div>
-    <div class="container" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;" >
+    <div class="container" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;">
         <!-- Encabezado, buscador y filtro -->
         <div class="container mt-4">
             <div class="subtittle ml-5">Alojamientos y Servicios
-                <p class="text" style="margin-left: 20px;">Busca el alojamiento o servicio que necesites modificar o eliminar</p>
+                <p class="text" style="margin-left: 20px;">Busca el alojamiento o servicio que necesites modificar o
+                    eliminar</p>
             </div>
             <div class="input-group d-flex justify-content-center">
                 <div class="form-outline flex-grow-1" data-mdb-input-init style="max-width: 400px;">
-                    <input id="search-focus" type="search" id="buscar" class="form-control" style="width: 100%;" placeholder="Buscar alojamiento o servicio">
+                    <input id="search-focus" type="search" id="buscar" class="form-control" style="width: 100%;"
+                        placeholder="Buscar alojamiento o servicio" [(ngModel)]="searchQuery"
+                        (input)="filtrarItems(); filtrarServicios()">
                 </div>
-                <button type="button" class="btn btn-simple align-self-center" data-mdb-ripple-init style="height: 100%;">
+                <button type="button" class="btn btn-simple align-self-center" data-mdb-ripple-init
+                    style="height: 100%;">
                     <i class="fas fa-search"></i>
                 </button>
-            </div>  
-        </div>
-        <!-- Añadir alojamiento y servicio--> 
-        <div class="d-flex justify-content-end mt-4 mr-5">
-            <button type="button" class="btn btn-info mr-3" routerLink="/accommodations-and-services/add-accommodation">Añadir Alojamiento</button>
-            <button type="button" class="btn btn-info" routerLink="/accommodations-and-services/add-additional-service">Añadir Servicio</button>
-        </div>
-        <!-- Lista de reservas -->
-        <div class="row reserva-list justify-content-center mt-4">
-            <!-- Reserva alojamiento -->
-            <div class="col-md-10 col-lg-9 reserva-item mb-4">
-                <div class="row align-items-center">
-                    <!-- Imagen de la reserva -->
-                    <div class="col-md-4 text-center">
-                        <img src="https://via.placeholder.com/500x300" alt="Imagen Reserva" class="img-fluid" style="max-width: 100%; height: auto;">
-                    </div>
-                    <!-- Información de la reserva -->
-                    <div class="col-md-8">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h3 class="subtittle">Nombre de la habitación</h3>
-                            <div>
-                                <!-- Icono de editar -->
-                                <button class="btn btn-link text-primary me-3" title="Editar" >
-                                    <i class="fas fa-edit fa-lg"></i>
-                                </button>
-                                <!-- Icono de eliminar -->
-                                <button class="btn btn-link text-danger" title="Eliminar">
-                                    <i class="fas fa-trash-alt fa-lg" routerLink="/accommodations-and-services/delete-accommodation"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="info-details text-start">
-                            <p class="text"><span class="text3">Cantidad de ocupantes:</span> [cantidad]</p>
-                            <p class="text"><span class="text3">Servicios de alojamiento:</span> [servicios]</p>
-                            <p class="text"><span class="text3">Precio por noche:</span> $[precio]</p>
-                        </div>
-                    </div>
-                </div>
             </div>
-            
-            <!-- Reserva servicios -->
-            <div class="col-md-10 col-lg-9 reserva-item mb-4">
+        </div>
+        <!-- Añadir alojamiento y servicio-->
+        <div class="d-flex justify-content-end mt-4 mr-5">
+            <button type="button" class="btn btn-info mr-3"
+                routerLink="/accommodations-and-services/add-accommodation">Añadir Alojamiento</button>
+            <button type="button" class="btn btn-info"
+                routerLink="/accommodations-and-services/add-additional-service">Añadir Servicio</button>
+        </div>
+        <!-- Lista de alojamientos y servicios -->
+        <div class="row reserva-list justify-content-center mt-4">
+            <!-- Alojamiento 1-->
+            <div class="col-md-10 col-lg-9 reserva-item mb-4" *ngFor="let item of filteredItems">
                 <div class="row align-items-center">
-                    <!-- Imagen de la reserva -->
+                    <!-- Imagen del alojamiento -->
                     <div class="col-md-4 text-center">
-                        <img src="https://via.placeholder.com/500x300" alt="Imagen Reserva" class="img-fluid" style="max-width: 100%; height: auto;">
+                        <img [src]="item.imagen" alt="Imagen Reserva" class="img-fluid-edit">
                     </div>
-                    <!-- Información de la reserva -->
+                    <!-- Información del alojamiento -->
                     <div class="col-md-8">
                         <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h3 class="subtittle">Nombre del servicio</h3>
+                            <h3 class="subtittle">{{ item.nombre }}</h3>
                             <div>
                                 <!-- Icono de editar -->
                                 <button class="btn btn-link text-primary me-3" title="Editar">
                                     <i class="fas fa-edit fa-lg"></i>
                                 </button>
                                 <!-- Icono de eliminar -->
-                                <button class="btn btn-link text-danger" routerLink="/accommodations-and-services/delete-service" title="Eliminar">
+                                <button class="btn btn-link text-danger" title="Eliminar"
+                                    [routerLink]="['/accommodations-and-services/delete-accommodation']" [queryParams]="{
+                                    imagen: item.imagen,
+                                    nombre: item.nombre,
+                                    cantidadPersonas: item.cantidadPersonas,
+                                    servicios: item.servicios,
+                                    precioNoche: item.precioNoche
+                                }">
                                     <i class="fas fa-trash-alt fa-lg"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="info-details text-start">
-                            <p class="text"><span class="text3">Cantidad de ocupantes:</span> [cantidad]</p>
-                            <p class="text"><span class="text3">Disponibilidad de reserva:</span> [Dia y hora /posible formato: Lun: 8:00 a.m- 18:00 p.m, Mar:9:00 a.m-15:00 p.m,...]</p>
-                            <p class="text"><span class="text3">Planes:</span> [Planes / posible formato: /tirulo plan/-/precio/. EJ: plan basico-$15.000, plan familiar-$20.000]</p>
+                            <p class="text"><span class="text3">Cantidad de ocupantes:</span> {{ item.cantidadPersonas}}
+                            </p>
+                            <p class="text"><span class="text3">Servicios de alojamiento:</span> {{ item.servicios }}
+                            </p>
+                            <p class="text"><span class="text3">Precio por noche:</span> {{ item.precioNoche }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 1 -->
+            <div class="col-md-10 col-lg-9 reserva-item mb-4" *ngFor="let servicio of filteredServices">
+                <div class="row align-items-center">
+                    <!-- Imagen de la reserva -->
+                    <div class="col-md-4 text-center">
+                        <img [src]="servicio.imagen" alt="Imagen Reserva" class="img-fluid-edit">
+                    </div>
+                    <!-- Información de la reserva -->
+                    <div class="col-md-8">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h3 class="subtittle">{{ servicio.nombreServicio }}</h3>
+                            <div>
+                                <!-- Icono de editar -->
+                                <button class="btn btn-link text-primary me-3" title="Editar">
+                                    <i class="fas fa-edit fa-lg"></i>
+                                </button>
+                                <!-- Icono de eliminar -->
+                                <button class="btn btn-link text-danger" title="Eliminar"
+                                    [routerLink]="['/accommodations-and-services/delete-service']" [queryParams]="{
+                                    imagen: servicio.imagen,
+                                    nombreServicio: servicio.nombreServicio,
+                                    cantidadPersonas: servicio.cantidadPersonas,
+                                    disponibilidad: servicio.disponibilidad,
+                                    planes: servicio.planes
+                                }">
+                                    <i class="fas fa-trash-alt fa-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="info-details text-start">
+                            <p class="text"><span class="text3">Cantidad de ocupantes máxima:</span> {{
+                                servicio.cantidadPersonas }}</p>
+                            <p class="text"><span class="text3">Disponibilidad de reserva:</span> {{
+                                servicio.disponibilidad }}</p>
+                            <p class="text"><span class="text3">Planes:</span> {{ servicio.planes }}</p>
                         </div>
                     </div>
                 </div>

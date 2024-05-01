@@ -12,10 +12,9 @@
                         <form style="margin-left: 50px; margin-right: 50px; margin-top: 20px">
                             <div class="form-group">
                                 <label for="cargo" class="text">Cargo:</label>
-                                <input type="text" class="form-control" id="cargo" name="cargo" style="width: 440px;" placeholder="Nombre del cargo">
+                                <input type="text" class="form-control" id="cargo" name="cargo" style="width: 440px;" placeholder="Nombre del cargo" [(ngModel)]="cargo">
                             </div> 
                             <!--JORNADA LABORAL--> 
-                            
                             <label for="jornada" class="text">Jornada Laboral:</label>
                             <div class="row align-items-center mt-2" *ngFor="let jornada of jornadas; let i = index">
                                 <div class="col">
@@ -24,10 +23,10 @@
                                         <option *ngFor="let dia of diasSemana" [value]="dia">{{ dia }}</option>
                                     </select>
                                 </div>
-                                <div class="col" style="max-width: 150px;">
+                                <div class="col" style="max-width: 160px;">
                                     <input type="time" class="form-control" [(ngModel)]="jornadas[i].horaInicio" placeholder="Hora de inicio">
                                 </div>
-                                <div class="col" style="max-width: 150px;">
+                                <div class="col" style="max-width: 160px;">
                                     <input type="time" class="form-control" [(ngModel)]="jornadas[i].horaFin" placeholder="Hora de fin">
                                 </div>
                                 <div class="col-auto"> 
@@ -38,10 +37,10 @@
                             <!--Botones-->
                             <div class="row mt-5 justify-content-center align-items-center">
                                 <div class="col text-center">
-                                    <button class="btn btn-secondary px-5 py-1">Regresar</button>
+                                    <button class="btn btn-secondary px-5 py-1" onclick="window.history.back()">Regresar</button>
                                 </div>
                                 <div class="col text-center">
-                                    <button class="btn btn-primary px-5 py-1" routerLink="/signin" >Finalizar Registro</button>
+                                    <button class="btn btn-primary px-5 py-1" (click)="verificarCampos()">Finalizar Registro</button>
                                 </div>
                             </div>
                         </form>

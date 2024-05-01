@@ -335,16 +335,16 @@ body { // Fondo general
     align-items: center;
     overflow: hidden; /* Oculta el exceso de imagen */
     position: relative; /* Permite posicionar la imagen dentro del contenedor */
-  }
+}
   
-  .image-container-add img {
+.image-container-add img {
     min-width: 100%; /* La imagen no superará el ancho del contenedor */
     min-height: 100%; /* La imagen no superará la altura del contenedor */
     width: auto; /* Permite que la imagen se ajuste proporcionalmente */
     height: auto; 
-  }
+}
 
-  .img-fluid-view{
+.img-fluid-view{
     width: 400px; /* Ancho máximo del contenedor */
     height: 260px; /* Altura máxima del contenedor */
     display: flex;
@@ -352,16 +352,16 @@ body { // Fondo general
     align-items: center;
     overflow: hidden; /* Oculta el exceso de imagen */
     position: relative; /* Permite posicionar la imagen dentro del contenedor */
-  }
+}
 
-  .img-flud-view img {
+.img-flud-view img {
     min-width: 100%; /* La imagen no superará el ancho del contenedor */
     min-height: 100%; /* La imagen no superará la altura del contenedor */
     width: auto; /* Permite que la imagen se ajuste proporcionalmente */
     height: auto; 
-  }
+}
 
-  .img-fluid-staff{
+.img-fluid-staff{
     width: 200px; /* Ancho máximo del contenedor */
     height: 200px; /* Altura máxima del contenedor */
     display: flex;
@@ -369,17 +369,111 @@ body { // Fondo general
     align-items: center;
     overflow: hidden; /* Oculta el exceso de imagen */
     position: relative; /* Permite posicionar la imagen dentro del contenedor */
-  }
+}
 
-  .img-fluid-staff-amp{
-    width: 300px; /* Ancho máximo del contenedor */
-    height: 300px; /* Altura máxima del contenedor */
+.img-fluid-staff-amp{
+    width: 300px; 
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-fluid-reservation{
+    width: 200px; 
+    height: 150px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-fluid-edit{
+    width: 230px; 
+    height: 140px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.img-fluid-rooms{
+    width: 250px; /* Ancho máximo del contenedor */
+    height: 150px; /* Altura máxima del contenedor */
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Oculta el exceso de imagen */
     position: relative; /* Permite posicionar la imagen dentro del contenedor */
+}
+  
+.fondo-degradado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(90, 190, 73, 100%), rgba(34, 52, 88, 100%));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuadro {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    height: 350px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgPage {
+    width: 170px;
+    margin-bottom: 20px;
+}
+
+.btn-page {
+    padding: 10px 20px;
+    background: linear-gradient(to bottom right, rgba(90, 190, 73, 80%), rgba(34, 52, 88, 80%)); /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    font-weight: 700;
+    text-align: center;
+}
+  
+.btn-simple-page {
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    width: 200px;
+    height: 35px; 
+    line-height: 0px;
+}
+
+.btn-simple-page:hover {
+    background-color: black;
+    color: white;
+    font-weight: 500;
+}
+
+.alert-small {
+    font-size: 12px;
+    width: 200px; /* Ancho personalizado */
+    animation: shake 0.5s infinite alternate; /* Efecto de movimiento */
   }
   
-  
-  
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(10px); }
+  }

@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <!--Perfil-->
     <div class="header-rectangle">
@@ -14,11 +15,11 @@
         </div>
         <div class="profile-info">
             <div class="profile-details">
-                <span class="profile-name">Nombre del Usuario</span>
+                <span class="profile-name">Carlos Enrique Martinez Restrepo</span>
                 <br>
-                <span class="profile-role">Cargo del Usuario</span>
+                <span class="profile-role">Gernte administrativo</span>
             </div>
-            <img src="https://via.placeholder.com/40" alt="Foto de Perfil" class="profile-image">
+            <img src="assets/img/staff/gerente.jpg" alt="Foto de Perfil" class="profile-image">
         </div>
     </div>
 
@@ -26,114 +27,130 @@
     <div class="container" style="width: 90%; margin-top: 6%;">
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarWeb">
-                <ul class="navbar-nav mx-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="/bookings">Reservas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/accommodations-and-services">Aloamientos y servicios</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/check-in">Check-In</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/check-out">Check-Out</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/staff-management">Gestión de personal</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Informes y estadísticas</a>
-                  </li>
-                </ul>
-              </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarWeb">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/bookings">Reservas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accommodations-and-services">Aloamientos y servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/check-in">Check-In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/check-out">Check-Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/staff-management">Gestión de personal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/reportsAnsStatistics">Informes y estadísticas</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </nav>
+        </nav>
     </div>
 
-    <div class="container" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;" >
+    <div class="container" style="width: 87.9%; background-color: white; display: flex; flex-direction: column;">
         <div class="color-container mt-4 mb-3" style="margin-right: auto; margin-left: auto;">
             <h2 class="subtittle">Crear reserva</h2>
         </div>
         <div class="reserva-container" style="width: 85%; margin-right: auto; margin-left: auto; margin-top: 10px;">
-            <p class="text"><span class="text2">Habitación 4:</span> Alojamiento para [cantidad] personas</p>
+            <p class="text"><span class="subtittle">{{ habitacion }}:</span> Alojamiento para 2 personas</p>
         </div>
         <form>
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <!-- Imagen -->
-                    <img src="https://via.placeholder.com/650x380" alt="Imagen de la habitación" class="img-fluid">
+                    <img [src]="imagen" alt="Imagen de la habitación" class="img-fluid">
                 </div>
                 <div class="col-md-4">
                     <!-- Formulario para datos del huésped -->
-                        <h2 class="subtittle" style="font-size: 20px;">Datos del huesped</h2>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del huesped">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellidos del huesped">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo electrónico">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="confirmarCorreo" name="confirmarCorreo" placeholder="Confirmar correo electrónico">
-                        </div>
+                    <h2 class="subtittle" style="font-size: 20px;">Datos del huesped</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="nombre" name="nombre"
+                            placeholder="Nombre del huesped" [(ngModel)]="nombre">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="apellido" name="apellido"
+                            placeholder="Apellidos del huesped" [(ngModel)]="apellido">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono"
+                            [(ngModel)]="telefono">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="correo" name="correo"
+                            placeholder="Correo electrónico" [(ngModel)]="correo" (input)="validarCorreos()">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="confirmarCorreo" name="confirmarCorreo"
+                            placeholder="Confirmar correo electrónico" [(ngModel)]="confirmarCorreo"
+                            (input)="validarCorreos()">
+                        <span *ngIf="correoInvalido" class="text-danger">Los correos electrónicos no coinciden.</span>
+                    </div>
                 </div>
                 <div class="container mt-4">
                     <div class="row justify-content-center">
                         <!-- Columna 1 -->
                         <div class="col-md-5">
                             <h2 class="subtittle">Datos de la reserva</h2>
-                                <div class="form-group">
-                                    <input type="number" class="form-control " id="cantidad" name="cantidad" min="1" step="1" placeholder="Cantidad de personas">
+                            <div class="form-group">
+                                <input type="number" class="form-control " id="cantidad" name="cantidad" min="1"
+                                    step="1" placeholder="Cantidad de personas" [(ngModel)]="cantidad">
+                            </div>
+                            <div class="form-group">
+                                <label for="check_in_reserva">Fecha y Hora de Entrada:</label>
+                                <input type="datetime-local" class="form-control" id="check_in" name="check_in"
+                                    [(ngModel)]="check_in">
+                            </div>
+                            <div class="form-group">
+                                <label for="check_out_reserva">Fecha y Hora de Salida:</label>
+                                <input type="datetime-local" class="form-control" id="check_out" name="check_out"
+                                    [(ngModel)]="check_out">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="precio" class="fw-bold" style="font-size: 14px;">Precio por
+                                            Noche:</label>
+                                        <input type="text" class="form-control" id="precio" name="precio" readonly
+                                            [value]="precioNoche">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="check_in_reserva">Fecha y Hora de Entrada:</label>
-                                    <input type="datetime-local" class="form-control" id="check_in" name="check_in">
-                                </div>
-                                <div class="form-group">
-                                    <label for="check_out_reserva">Fecha y Hora de Salida:</label>
-                                    <input type="datetime-local" class="form-control" id="check_out" name="check_out">
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="precio" class="fw-bold">Precio por Noche:</label>
-                                            <input type="text" class="form-control" id="precio" name="precio" readonly>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="descuento" class="fw-bold" style="font-size: 14px;">Descuento
+                                            (%):</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" id="descuento" name="descuento"
+                                                aria-label="Descuento" aria-describedby="basic-addon2"
+                                                [(ngModel)]="descuento" (input)="calcularPrecioTotal()">
+                                            <span class="input-group-text" id="basic-addon2">%</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="descuento" class="fw-bold">Descuento (%):</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control" id="descuento" name="descuento" aria-label="Descuento" aria-describedby="basic-addon2">
-                                                <span class="input-group-text" id="basic-addon2">%</span>
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="precioTotal" class="fw-bold" style="font-size: 14px;">Precio
+                                            Total:</label>
+                                        <input type="text" class="form-control" id="precioTotal" name="precioTotal"
+                                            readonly [(ngModel)]="precioTotal">
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="precioTotal" class="fw-bold">Precio Total:</label>
-                                            <input type="text" class="form-control" id="precioTotal" name="precioTotal" readonly>
-                                        </div>
-                                    </div>
-                                </div>                                
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-5">
                             <h2 class="subtittle">Servicios del Alojamiento</h2>
                             <p>Descripción de los servicios disponibles en el alojamiento:</p>
                             <ul>
-                                <li>Servicio 1</li>
-                                <li>Servicio 2</li>
-                                <li>Servicio 3</li>
+                                <li *ngFor="let servicio of servicios.split(',')"> {{ servicio.trim() }}</li>
                             </ul>
                         </div>
                     </div>
@@ -141,10 +158,11 @@
             </div>
             <div class="row mt-3 justify-content-center mb-5">
                 <div class="col-md-3">
-                    <button type="button" class="btn btn-secondary w-100">Cancelar</button>
+                    <button type="button" class="btn btn-secondary w-100"
+                        onclick="window.history.back()">Cancelar</button>
                 </div>
                 <div class="col-md-3">
-                    <button type="submit" class="btn btn-primary w-100">Reservar</button>
+                    <button type="submit" class="btn btn-primary w-100" (click)="reservar()">Reservar</button>
                 </div>
             </div>
         </form>

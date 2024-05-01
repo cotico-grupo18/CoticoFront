@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
-interface Servicio {
-  id: string;
-  nombre: string;
-  selected: boolean;
-}
 
 @Component({
   selector: 'app-add-additonal-service',
@@ -12,8 +8,15 @@ interface Servicio {
   styleUrl: './add-additonal-service.component.scss'
 })
 export class AddAdditonalServiceComponent {
-  nombre: string = '';
-  imagenSeleccionada: string = ''; // Variable para almacenar la URL de la imagen seleccionada
+  nombreServicio: string = '';
+  imagenSeleccionada: string = '';
+  dispoReserva: any[] = [];
+  diasSemana: string[] = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  planes: any[] = [];
+
+  constructor() {
+    this.agregarDispoReserva();
+  }
 
   archivoSeleccionado(event: any) {
     const file: File = event.target.files[0];
@@ -25,14 +28,6 @@ export class AddAdditonalServiceComponent {
       reader.readAsDataURL(file);
     }
   } 
-  
-  dispoReserva: any[] = [];
-  diasSemana: string[] = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
-
-  constructor() {
-    // Agregar una jornada por defecto al iniciar el componente
-    this.agregarDispoReserva();
-  }
 
   agregarDispoReserva(): void {
     this.dispoReserva.push({ dia: 'Seleccionar', horaInicio: '', horaFin: '' });
@@ -42,25 +37,46 @@ export class AddAdditonalServiceComponent {
     this.dispoReserva.splice(index, 1);
   }
 
-  planes: any[] = []; // Arreglo para almacenar los planes
-
-    agregarPlan() {
-        this.planes.push({ titulo: '', descripcion: '', precio: 0 });
-    }
-
-    eliminarPlan(index: number) {
-        this.planes.splice(index, 1);
-    }
-
-      
-  
-  cancelar() {
-    // Lógica para el boton cancelar 
+  agregarPlan() {
+    this.planes.push({ titulo: '', descripcion: '', precio: 0 });
   }
 
-  submitForm(){
-    // Lógica para enviar el formulario
+  eliminarPlan(index: number) {
+    this.planes.splice(index, 1);
   }
 
+  alertaExito() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Éxito',
+      text: 'El alojamiento se añadió correctamente.',
+      confirmButtonText: 'Aceptar'
+    }).then(() => {
+      window.location.href = '/accommodations-and-services';
+    });
+  }
+
+alertaError() {
+  Swal.fire({
+    icon: 'error',
+    title: 'Error',
+    text: 'Por favor, complete todos los campos antes de continuar.',
+    confirmButtonText: 'Aceptar'
+  });
+}
+ 
+validarFormulario() {
+  if (this.camposValidos()) {
+    this.alertaExito();
+  } else {
+    this.alertaError();
+  }
+}
+
+camposValidos(): boolean {
+  return !!(
+    this.nombreServicio 
+  );
+}   
 
 }

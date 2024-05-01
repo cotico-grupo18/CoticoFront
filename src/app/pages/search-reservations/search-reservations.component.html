@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <!--Perfil-->
     <div class="header-rectangle">
@@ -14,74 +15,82 @@
         </div>
         <div class="profile-info">
             <div class="profile-details">
-                <span class="profile-name">Nombre del Usuario</span>
+                <span class="profile-name">Carlos Enrique Martinez Restrepo</span>
                 <br>
-                <span class="profile-role">Cargo del Usuario</span>
+                <span class="profile-role">Gernte administrativo</span>
             </div>
-            <img src="https://via.placeholder.com/40" alt="Foto de Perfil" class="profile-image">
+            <img src="assets/img/staff/gerente.jpg" alt="Foto de Perfil" class="profile-image">
         </div>
     </div>
 
-    
+
     <!--Menú superior-->
     <div class="container" style="width: 90%; margin-top: 6%;">
         <nav class="navbar navbar-expand-lg bg-black">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarWeb">
-                <ul class="navbar-nav mx-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="/bookings">Reservas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/accommodations-and-services">Aloamientos y servicios</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/check-in">Check-In</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/check-out">Check-Out</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/staff-management">Gestión de personal</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Informes y estadísticas</a>
-                  </li>
-                </ul>
-              </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarWeb">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/bookings">Reservas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accommodations-and-services">Alojamientos y servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/check-in">Check-In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/check-out">Check-Out</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/staff-management">Gestión de personal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/reportsAnsStatistics">Informes y estadísticas</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </nav>
+        </nav>
     </div>
     <!--Contenedor-->
-    <div class="container" style="width: 87.9%; background-color: white;" >
-        <div class="separador"><p style="color: white; font-size: 7px;">vacio</p></div> <!--Separador-->
+    <div class="container" style="width: 87.9%; background-color: white;">
+        <div class="separador">
+            <p style="color: white; font-size: 7px;">vacio</p>
+        </div> <!--Separador-->
         <!--Realizar reserva-->
         <div id="reserva" class="container-degrade-principal" style="padding: 20px; margin-top: 20px;">
             <div class="row justify-content-center">
                 <div class="col-md-12">
-                    <h2 class="subtittle" style="font-size: 20px; color: white; margin-left: 30px;">Reservas directas</h2>
-                    <p class="text-description text" style="text-align: left; margin-left: 45px;">Buscar disponibilidad de habitaciones</p>
+                    <h2 class="subtittle" style="font-size: 20px; color: white; margin-left: 30px;">Reservas directas
+                    </h2>
+                    <p class="text-description text" style="text-align: left; margin-left: 45px;">Buscar disponibilidad
+                        de habitaciones</p>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="entrada_date" class="text2" style="color: white;">Fecha de entrada</label>
-                        <input type="date" class="form-control" id="check_in_date" name="check_in_date" style="width: 100%;">
+                        <input type="date" class="form-control" id="check_in_date" name="check_in_date"
+                            style="width: 100%;" [(ngModel)]="entradaDate">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="salida_date" class="text2" style="color: white;">Fecha de salida</label>
-                        <input type="date" class="form-control" id="check_out_date" name="check_out_date" style="width: 100%;">
+                        <input type="date" class="form-control" id="check_out_date" name="check_out_date"
+                            style="width: 100%;" [(ngModel)]="salidaDate">
                     </div>
-                </div> 
+                </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label for="cantidad_personas" class="text2" style="color: white;">Huespedes</label>
-                        <select class="form-select" id="cantidad_personas" name="cantidad_personas">
-                            <option selected>Seleccionar</option>
+                        <select class="form-select" id="cantidad_personas" name="cantidad_personas"
+                            [(ngModel)]="cantidadPersonas">
+                            <option selected disabled>Seleccionar</option>
                             <option value="1">1 persona</option>
                             <option value="2">2 personas</option>
                             <option value="3">3 personas</option>
@@ -89,7 +98,7 @@
                             <option value="5">5 personas</option>
                         </select>
                     </div>
-                </div>                    
+                </div>
                 <div class="col-md-2">
                     <button class="btn btn-app" style="margin-top: 30px;">Buscar</button>
                 </div>
@@ -101,17 +110,24 @@
             <!-- Reserva 1 -->
             <div class="col-md-10 col-lg-8 reserva-item mb-4">
                 <div class="row align-items-center">
-                    <div class="col-md-3 text-center">
-                        <img src="https://via.placeholder.com/360x220" alt="Imagen Reserva" class="img-fluid">
+                    <div class="col-md-4 text-center">
+                        <img src="assets/img/rooms/Habitacion3.jpg" alt="Imagen Reserva" class="img-fluid-reservation">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <div class="info text-center text-md-start">
-                            <h3 class="subtittle">Nombre de la habitación</h3>
-                            <p class="text2 mb-1">Alojamiento para [cantidad] personas</p>
-                            <p class="text2 mb-1">Servicios de alojamiento: [servicios]</p>
-                            <p class="text2 mb-1">Finalización de la reserva anterior: DD/MM/AA a las 00:00</p>
-                            <p class="text2">Precio por noche: $[precio]</p>
-                            <a href="#" class="btn btn-reservar mb-2" routerLink="/bookings/search-reservation/create-reservation">Reservar</a>
+                            <h3 class="subtittle">Habitación 4A</h3>
+                            <p class="text mb-1">Alojamiento para 2 personas</p>
+                            <p class="text mb-1"><span class="text2">Servicios del alojamiento:</span> TV, Aire
+                                acondicionado, Nevera, Cocina sencilla</p>
+                            <p class="text mb-1"><span class="text2">Finalización de la reserva anterior:</span>
+                                2/05/2024 a las 7:00 p.m</p>
+                            <p class="text mb-2"><span class="text2">Precio por noche:</span> $100.000</p>
+                            <a [routerLink]="['/bookings/search-reservation/create-reservation']" [queryParams]="{ 
+                                habitacion: 'Habitación 4A',
+                                servicios: 'TV, Aire acondicionado, Nevera, Cocina sencilla',
+                                precio: '$100.000',
+                                imagen: 'assets/img/rooms/Habitacion3.jpg'
+                              }" class="btn btn-reservar mb-2">Reservar</a>
                         </div>
                     </div>
                 </div>
@@ -119,17 +135,24 @@
             <!-- Reserva 2 -->
             <div class="col-md-10 col-lg-8 reserva-item mb-4">
                 <div class="row align-items-center">
-                    <div class="col-md-3 text-center">
-                        <img src="https://via.placeholder.com/360x220" alt="Imagen Reserva" class="img-fluid">
+                    <div class="col-md-4 text-center">
+                        <img src="assets/img/rooms/Habitacion1.jpg" alt="Imagen Reserva" class="img-fluid-reservation">
                     </div>
-                    <div class="col-md-9">
-                        <div class="info text-center text-md-start"> 
-                            <h3 class="subtittle">Nombre de la habitación</h3>
-                            <p class="text2 mb-1">Alojamiento para [cantidad] personas</p>
-                            <p class="text2 mb-1">Servicios de alojamiento: [servicios]</p>
-                            <p class="text2 mb-1">Finalización de la reserva anterior: DD/MM/AA a las 00:00</p>
-                            <p class="text2">Precio por noche: $[precio]</p>
-                            <a href="#" class="btn btn-reservar mb-2">Reservar</a>
+                    <div class="col-md-8">
+                        <div class="info text-center text-md-start">
+                            <h3 class="subtittle">Habitación 3B</h3>
+                            <p class="text mb-1">Alojamiento para 2 personas</p>
+                            <p class="text mb-1"><span class="text2">Servicios del alojamiento:</span> TV, Aire
+                                acondicionado, Nevera, Balcón</p>
+                            <p class="text mb-1"><span class="text2">Finalización de la reserva anterior:</span>
+                                3/05/2024 a las 5:00 p.m</p>
+                            <p class="text mb-2"><span class="text2">Precio por noche:</span> $100.000</p>
+                            <a [routerLink]="['/bookings/search-reservation/create-reservation']" [queryParams]="{ 
+                                habitacion: 'Habitación 3B',
+                                servicios: 'TV, Aire acondicionado, Nevera, Balcón',
+                                precio: '$100.000',
+                                imagen: 'assets/img/rooms/Habitacion1.jpg'
+                              }" class="btn btn-reservar mb-2">Reservar</a>
                         </div>
                     </div>
                 </div>
@@ -137,17 +160,24 @@
             <!-- Reserva 3 -->
             <div class="col-md-10 col-lg-8 reserva-item mb-4">
                 <div class="row align-items-center">
-                    <div class="col-md-3 text-center">
-                        <img src="https://via.placeholder.com/360x220" alt="Imagen Reserva" class="img-fluid">
+                    <div class="col-md-4 text-center">
+                        <img src="assets/img/rooms/Habitacion4.jpg" alt="Imagen Reserva" class="img-fluid-reservation">
                     </div>
-                    <div class="col-md-9">
-                        <div class="info text-center text-md-start"> 
-                            <h3 class="subtittle">Nombre de la habitación</h3>
-                            <p class="text2 mb-1">Alojamiento para [cantidad] personas</p>
-                            <p class="text2 mb-1">Servicios de alojamiento: [servicios]</p>
-                            <p class="text2 mb-1">Finalización de la reserva anterior: DD/MM/AA a las 00:00</p>
-                            <p class="text2">Precio por noche: $[precio]</p>
-                            <a href="#" class="btn btn-reservar mb-2">Reservar</a>
+                    <div class="col-md-8">
+                        <div class="info text-center text-md-start">
+                            <h3 class="subtittle">Habitación 2C</h3>
+                            <p class="text mb-1">Alojamiento para 2 personas</p>
+                            <p class="text mb-1"><span class="text2">Servicios del alojamiento:</span> TV, Aire
+                                acondicionado, Nevera, Cocina sencilla, Servicio a la habitación, Balcón</p>
+                            <p class="text mb-1"><span class="text2">Finalización de la reserva anterior:</span>
+                                2/05/2024 a las 12:00 p.m</p>
+                            <p class="text mb-2"><span class="text2">Precio por noche:</span> $150.000</p>
+                            <a [routerLink]="['/bookings/search-reservation/create-reservation']" [queryParams]="{ 
+                                habitacion: 'Habitación 2C',
+                                servicios: 'TV, Aire acondicionado, Nevera, Cocina sencilla, Servicio a la habitación, Balcón',
+                                precio: '$150.000',
+                                imagen: 'assets/img/rooms/Habitacion4.jpg'
+                              }" class="btn btn-reservar mb-2">Reservar</a>
                         </div>
                     </div>
                 </div>
@@ -155,21 +185,28 @@
             <!-- Reserva 4 -->
             <div class="col-md-10 col-lg-8 reserva-item mb-4">
                 <div class="row align-items-center">
-                    <div class="col-md-3 text-center">
-                        <img src="https://via.placeholder.com/360x220" alt="Imagen Reserva" class="img-fluid">
+                    <div class="col-md-4 text-center">
+                        <img src="assets/img/rooms/Habitacion5.jpeg" alt="Imagen Reserva" class="img-fluid-reservation">
                     </div>
-                    <div class="col-md-9">
-                        <div class="info text-center text-md-start"> 
-                            <h3 class="subtittle">Nombre de la habitación</h3>
-                            <p class="text2 mb-1">Alojamiento para [cantidad] personas</p>
-                            <p class="text2 mb-1">Servicios de alojamiento: [servicios]</p>
-                            <p class="text2 mb-1">Finalización de la reserva anterior: DD/MM/AA a las 00:00</p>
-                            <p class="text2">Precio por noche: $[precio]</p>
-                            <a href="#" class="btn btn-reservar mb-2">Reservar</a>
+                    <div class="col-md-8">
+                        <div class="info text-center text-md-start">
+                            <h3 class="subtittle">Habitación 1C</h3>
+                            <p class="text mb-1">Alojamiento para 2 personas</p>
+                            <p class="text mb-1"><span class="text2">Servicios del alojamiento:</span> TV, Aire
+                                acondicionado, Nevera, Cocina sencilla, Servicio a la habitación, Balcón</p>
+                            <p class="text mb-1"><span class="text2">Finalización de la reserva anterior:</span>
+                                4/05/2024 a las 3:00 p.m</p>
+                            <p class="text mb-2"><span class="text2">Precio por noche:</span> $180.000</p>
+                            <a [routerLink]="['/bookings/search-reservation/create-reservation']" [queryParams]="{ 
+                                habitacion: 'Habitación 1C',
+                                servicios: 'TV, Aire acondicionado, Nevera, Cocina sencilla, Servicio a la habitación, Balcón',
+                                precio: '$180.000',
+                                imagen: 'assets/img/rooms/Habitacion5.jpeg'
+                              }" class="btn btn-reservar mb-2">Reservar</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </body>
