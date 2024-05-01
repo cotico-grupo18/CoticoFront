@@ -23,8 +23,8 @@ import { ViewReservationComponent } from './pages/view-reservation/view-reservat
 import { ReportsAndStatisticsComponent } from './pages/reports-and-statistics/reports-and-statistics.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/landing_page_coticoStay', pathMatch: 'full' }, 
-  {path: 'landing_page_coticoStay', component: LandingComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, 
+  {path: 'home', component: LandingComponent},
   {path: 'validacion_hotel', component: ValidateHotelComponent},
   {path: 'signup', component: SignupHotelComponent},
   {path: 'signup/last_step', component: SignupHotelLastStepComponent},
