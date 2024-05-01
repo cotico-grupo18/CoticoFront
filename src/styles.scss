@@ -35,7 +35,7 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom right, #4A4C66, #25D275);
-    z-index: -1; /* Para que esté detrás del contenido */
+    z-index: -1; 
 }
 
 // Tipo de letra
@@ -88,26 +88,26 @@
 
 
 // Tarjetas
-.card-tittle { //Degradado
-    background-image: linear-gradient(to bottom right, rgba(90, 190, 73, 63%), rgba(34, 52, 88, 70%)); /* Degradado de azul a cian */
+.card-tittle {
+    background-image: linear-gradient(to bottom right, rgba(90, 190, 73, 63%), rgba(34, 52, 88, 70%));
     border: none;
     padding: 15px;
 }
 
-.card-body { // Fondo blanco
+.card-body {
     background-color: white;
     border: none;
     padding: 20px;
 }
 
-body { // Fondo general
+body {
     background-color: #e6e6e7;
-    padding-top: 0px; /* Ajusta este valor al de la altura de tu barra de perfil */ /*32*/
+    padding-top: 0px; 
     margin: 0;
 }
 
 .container-degrade-principal {
-    background-image: linear-gradient(to bottom right, rgba(90, 190, 73, 100%), rgba(34, 52, 88, 100%)); /* Degradado de azul a cian */
+    background-image: linear-gradient(to bottom right, rgba(90, 190, 73, 100%), rgba(34, 52, 88, 100%));
     border: none;
     width: 80%;
     margin-right: auto;
@@ -215,17 +215,17 @@ body { // Fondo general
     color: #fff;
     padding: 10px;
     position: fixed;
-    width: 100%;      /* Asegura que se extienda a lo largo de toda la ventana */
-    top: 0;           /* Alinea la barra en la parte superior de la ventana */
-    left: 0;          /* Alinea la barra en el borde izquierdo de la ventana */
+    width: 100%;
+    top: 0;
+    left: 0;
     z-index: 1000;  
 }
 
 .header-rectangle.scrolled {
-    background-image: linear-gradient(to right, rgba(142, 12, 75, 0.8), rgba(0, 25, 51, 80%)); /* Cambia a un fondo azul, por ejemplo */
+    background-image: linear-gradient(to right, rgba(142, 12, 75, 0.8), rgba(0, 25, 51, 80%));
 }
 
-
+// Detalles de perfil
 .brand-info, .profile-info {
     display: flex;
     align-items: center;
@@ -233,14 +233,14 @@ body { // Fondo general
 
 .profile-details {
     display: flex;
-    flex-direction: column; /* Coloca los elementos en columna */
-    align-items: flex-end; /* Alinea los elementos a la derecha */
+    flex-direction: column; 
+    align-items: flex-end;
 }
 
 .profile-name {
     font-family: "Inter", sans-serif;
     font-weight: bold;
-    margin-bottom: -0.8rem; /* Ajusta el margen inferior */
+    margin-bottom: -0.8rem;
 }
 
 .profile-role {
@@ -255,7 +255,7 @@ body { // Fondo general
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 15px; /* Ajusta el margen a la derecha de la imagen */
+    margin-right: 15px;
     margin-left: 30px;
 }
 
@@ -264,7 +264,7 @@ body { // Fondo general
     height: 56px;
     object-fit: cover;
     margin-right: 10px;
-    margin-left: 20px; /* Ajusta el margen a la derecha del logo */
+    margin-left: 20px;
 }
 
 .icons-container {
@@ -303,12 +303,12 @@ body { // Fondo general
     margin-bottom: 20px;
     width: 60%;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center; 
+    align-items: center; 
     text-align: center;
 }
 
-/* POpover */
+// Popover
 .popover-custom .popover-header {
     background-color: #00ffaa;
     text-align: center;
@@ -328,47 +328,47 @@ body { // Fondo general
 
 // imagenes
 .image-container-add {
-    width: 400px; /* Ancho máximo del contenedor */
-    height: 260px; /* Altura máxima del contenedor */
+    width: 400px; 
+    height: 260px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Oculta el exceso de imagen */
-    position: relative; /* Permite posicionar la imagen dentro del contenedor */
+    overflow: hidden; 
+    position: relative;
 }
   
 .image-container-add img {
-    min-width: 100%; /* La imagen no superará el ancho del contenedor */
-    min-height: 100%; /* La imagen no superará la altura del contenedor */
-    width: auto; /* Permite que la imagen se ajuste proporcionalmente */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
     height: auto; 
 }
 
 .img-fluid-view{
-    width: 400px; /* Ancho máximo del contenedor */
-    height: 260px; /* Altura máxima del contenedor */
+    width: 400px;
+    height: 260px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Oculta el exceso de imagen */
-    position: relative; /* Permite posicionar la imagen dentro del contenedor */
+    overflow: hidden; 
+    position: relative; 
 }
 
 .img-flud-view img {
-    min-width: 100%; /* La imagen no superará el ancho del contenedor */
-    min-height: 100%; /* La imagen no superará la altura del contenedor */
-    width: auto; /* Permite que la imagen se ajuste proporcionalmente */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto; 
     height: auto; 
 }
 
 .img-fluid-staff{
-    width: 200px; /* Ancho máximo del contenedor */
-    height: 200px; /* Altura máxima del contenedor */
+    width: 200px; 
+    height: 200px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Oculta el exceso de imagen */
-    position: relative; /* Permite posicionar la imagen dentro del contenedor */
+    overflow: hidden; 
+    position: relative; 
 }
 
 .img-fluid-staff-amp{
@@ -402,15 +402,32 @@ body { // Fondo general
 }
 
 .img-fluid-rooms{
-    width: 250px; /* Ancho máximo del contenedor */
-    height: 150px; /* Altura máxima del contenedor */
+    width: 250px; 
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Oculta el exceso de imagen */
-    position: relative; /* Permite posicionar la imagen dentro del contenedor */
+    overflow: hidden; 
+    position: relative;
 }
-  
+
+.imgPage {
+    width: 170px;
+    margin-bottom: 20px;
+}
+
+.btn-page {
+    padding: 10px 20px;
+    background: linear-gradient(to bottom right, rgba(90, 190, 73, 80%), rgba(34, 52, 88, 80%)); /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    font-weight: 700;
+    text-align: center;
+}
+
+// Adicionales
 .fondo-degradado {
     position: fixed;
     top: 0;
@@ -435,22 +452,6 @@ body { // Fondo general
     flex-direction: column;
     align-items: center;
 }
-
-.imgPage {
-    width: 170px;
-    margin-bottom: 20px;
-}
-
-.btn-page {
-    padding: 10px 20px;
-    background: linear-gradient(to bottom right, rgba(90, 190, 73, 80%), rgba(34, 52, 88, 80%)); /* Color del botón */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    width: 200px;
-    font-weight: 700;
-    text-align: center;
-}
   
 .btn-simple-page {
     background-color: black;
@@ -469,8 +470,8 @@ body { // Fondo general
 
 .alert-small {
     font-size: 12px;
-    width: 200px; /* Ancho personalizado */
-    animation: shake 0.5s infinite alternate; /* Efecto de movimiento */
+    width: 200px;
+    animation: shake 0.5s infinite alternate;
   }
   
   @keyframes shake {
