@@ -478,3 +478,35 @@ body {
     0% { transform: translateX(0); }
     100% { transform: translateX(10px); }
   }
+
+  .report-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    background: linear-gradient(to bottom right, rgba(90, 190, 73, 100%), rgba(34, 52, 88, 100%));
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .option {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .option:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  
